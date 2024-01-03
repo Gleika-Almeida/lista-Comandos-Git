@@ -14,7 +14,7 @@
 - [Instalação](#instalação)
   - [Instalando no Linux](#instalando-no-linux)
     - [Debian/Ubuntu](#debianubuntu)
-    - [Este PPA fornece a versão mais recente estável do Git no Ubunto.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubunto)
+    - [Este PPA fornece a versão mais recente estável do Git no Ubuntu.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubuntu)
     - [Fedora](#fedora)
   - [Instalando no Mac](#instalando-no-mac)
     - [MacPorts](#macports)
@@ -44,7 +44,7 @@
 ```
 $ sudo apt-get install git
 ```
-### Este PPA fornece a versão mais recente estável do Git no Ubunto.
+### Este PPA fornece a versão mais recente estável do Git no Ubuntu.
 ```
 $ add-apt-repository  
 $ ppa:git-core/ppa  
@@ -148,11 +148,9 @@ $ git push
 
 # Clonando um Repositório Existente
 
-
-
-
-
-
+```
+$ git clone URL
+```
 
 
 
@@ -162,3 +160,4 @@ $ git push
 <img  height="200" width="200" alt="GIt" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ0MTlzbGZ4dzg3eDBsdTYxZmdrajlwN2hzdGVrajJsN3pwY3lzZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7mMsa2P76o5Xn8NAD/giphy.gif"/>
 </div>
 
+<h5 align="center">Made with 💜 and Markdown.</h5>

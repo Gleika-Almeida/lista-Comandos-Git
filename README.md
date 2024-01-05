@@ -12,8 +12,7 @@
 
 #### Índice
 - [Instalação](#instalação)
-  - [Instalando no Linux](#instalando-no-linux)
-    - [Debian/Ubuntu](#debianubuntu)
+    - [Instalando Debian/Ubuntu](#instalando-debianubuntu)
     - [Este PPA fornece a versão mais recente estável do Git no Ubuntu.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubuntu)
     - [Fedora](#fedora)
   - [Instalando no Mac](#instalando-no-mac)
@@ -22,28 +21,23 @@
 - [Configuração](#configuração)
     - [Nome e e-mail](#nome-e-e-mail)
     - [Editor](#editor)
-- [Verificar a versão do git](#verificar-a-versão-do-git)
-- [Testando Suas Configurações](#testando-suas-configurações)
+    - [Verificar a versão do git](#verificar-a-versão-do-git)
+    - [Testando suas configurações](#testando-suas-configurações)
 - [Versionando seu  código com Git](#versionando-seu--código-com-git)
-- [Clonando um Repositório Existente](#clonando-um-repositório-existente)
-
-
+    - [Recebendo as mudanças](#recebendo-as-mudanças)
+    - [Clonando um repositório existente](#clonando-um-repositório-existente)
 
 <br>
 <br>
-
-
 
 # Instalação
 
-<br>
+### Instalando Debian/Ubuntu
 
-## Instalando no Linux
-
-### Debian/Ubuntu
 ```
 $ sudo apt-get install git
 ```
+
 ### Este PPA fornece a versão mais recente estável do Git no Ubuntu.
 ```
 $ add-apt-repository  
@@ -95,13 +89,13 @@ Sublime Text como seu editor:
 $ git config --global core.editor "subl -n -w"
 ```
 
-# Verificar a versão do git
+### Verificar a versão do git
 
 ```
 $ git --version
 ```
 
-# Testando Suas Configurações
+### Testando suas configurações
 
 ```
 $ git config --list
@@ -109,7 +103,7 @@ $ git config --list
 
 # Versionando seu  código com Git
 
-Para criar um repositório utilize o comando:
+Para criar um repositório utilize o comando.
 ```
 $ git init
 ```
@@ -120,12 +114,11 @@ Rastreando todas as alterções com   ` git add .` ou um arquivo em específicou
 $ git add README.md
 ```
 
-Vendo a situação dos arquivos no repositório:
+Vendo a situação dos arquivos no repositório.
 
 ```
 $ git status
 ```
-
 
 É uma boa prática enviar uma mensagem utilizando `-m` com as
 alterações que foram feitas.
@@ -133,7 +126,6 @@ alterações que foram feitas.
 ```
 $ git commit -m "first commit"
 ```
-
 
 Enviando as alterções para repositório remoto.
 
@@ -144,9 +136,14 @@ $ git push
 
 ⚠️ Forneça seu usuário e senha do GitHub quando solicitado ou token ou a chave SSH.
 
+### Recebendo as mudanças
+
+```
+$ git pull
+```
 
 
-# Clonando um Repositório Existente
+### Clonando um repositório existente
 
 ```
 $ git clone URL

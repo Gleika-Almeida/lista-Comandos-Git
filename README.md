@@ -23,9 +23,17 @@
     - [Editor](#editor)
     - [Verificar a versão do git](#verificar-a-versão-do-git)
     - [Testando suas configurações](#testando-suas-configurações)
-- [Versionando seu  código com Git](#versionando-seu--código-com-git)
+- [Versionando seu  código](#versionando-seu--código)
     - [Recebendo as mudanças](#recebendo-as-mudanças)
     - [Clonando um repositório existente](#clonando-um-repositório-existente)
+    - [Visualizando suas aterações dentro e fora do stage](#visualizando-suas-aterações-dentro-e-fora-do-stage)
+    - [comparar as alterações que estão no seu stage com o seu último commit](#comparar-as-alterações-que-estão-no-seu-stage-com-o-seu-último-commit)
+    - [Vendo o histórico de Commits](#vendo-o-histórico-de-commits)
+    - [Ver algumas estatísticas abreviadas para cada commit](#ver-algumas-estatísticas-abreviadas-para-cada-commit)
+    - [Removendo Arquivos ` `](#removendo-arquivos--)
+    - [Renomeando arquivos](#renomeando-arquivos)
+    - [Desfazendo coisas](#desfazendo-coisas)
+    - [Desfazendo alterações](#desfazendo-alterações)
 
 <br>
 <br>
@@ -101,7 +109,7 @@ $ git --version
 $ git config --list
 ```
 
-# Versionando seu  código com Git
+# Versionando seu  código
 
 Para criar um repositório utilize o comando.
 ```
@@ -148,6 +156,80 @@ $ git pull
 ```
 $ git clone URL
 ```
+
+### Visualizando suas aterações dentro e fora do stage
+
+```
+$ git diff
+```
+
+###  comparar as alterações que estão no seu stage com o seu último commit
+
+```
+$ git diff --staged
+```
+
+### Vendo o histórico de Commits
+
+```
+$ git log
+```
+
+### Ver algumas estatísticas abreviadas para cada commit
+
+```
+$ git log --stat
+```
+**👇🏾 Algumas opções simples de formatações de retorno para `git log  `.**
+
+| Opções          | Descrição                                                     | 
+| --------        | :------------------------------------------------------------ | 
+| -p              | Mostra o patch introduzido com cada commit.                                         |    
+| --shortstat     | Exibe apenas a linha informando a alteração, inserção e exclusão do comando --stat. |  
+| --name-only     | Mostra a lista de arquivos modificados após as informações de commit.               | 
+| --name-status   | Mostra também a lista de arquivos que sofreram modificação com informações adicionadas / modificadas  /excluídas.        | 
+| --abbrev-commit | Mostra apenas os primeiros caracteres da soma de verificação SHA-1 em vez de todos os 40. | 
+| --relative-date | Exibe a data em um formato relativo (por exemplo, ‘` 2 semanas atrás '’) em vez de usar o formato de data  completo. | 
+| --graph         | Exibe um gráfico ASCII do histórico de branches e merges ao lado da saída do log.    |
+| --pretty        |Mostra os commits em um formato alternativo. As opções incluem oneline, short, full, fuller e format (onde você especifica seu próprio formato). | 
+
+⚠️ Aperte a tecla **q** para sair dos resultados do ` git log` .
+
+### Removendo Arquivos ` ` 
+
+```
+$ git rm 
+ou
+$ git rm  README.md
+```
+👇🏾 você pode querer fazer é manter o arquivo no seu diretório de trabalho, mas
+removê-lo da sua área de stage.
+
+```
+$ git rm --cached README
+```
+
+### Renomeando arquivos
+O mesmo também pode ser movido para outra pasta.
+
+```
+$ git mv
+```
+### Desfazendo coisas
+```
+$ git commit --amend
+```
+
+### Desfazendo alterações
+É importante entender que o `git checkout -- <arquivo>` é um a comando
+perigoso. Qualquer modificação que você fez no arquivo se foi.
+```
+$ git checkout
+```
+
+
+
+
 
 
 

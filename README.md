@@ -23,14 +23,18 @@
     - [Editor](#editor)
     - [Verificar a versão do git](#verificar-a-versão-do-git)
     - [Testando suas configurações](#testando-suas-configurações)
-- [Versionando seu  código](#versionando-seu--código)
+- [Inicializando um Repositório em um Diretório Existente](#inicializando-um-repositório-em-um-diretório-existente)
+    - [Para criar um repositório utilize o comando](#para-criar-um-repositório-utilize-o-comando)
+    - [Rastreando todas as alterções de uma vez só](#rastreando-todas-as-alterções-de-uma-vez-só)
+    - [Salvando as alterações](#salvando-as-alterações)
+    - [Enviando as alterções](#enviando-as-alterções)
+    - [Clonando um repositório](#clonando-um-repositório)
     - [Recebendo as mudanças](#recebendo-as-mudanças)
-    - [Clonando um repositório existente](#clonando-um-repositório-existente)
-    - [Visualizando suas aterações dentro e fora do stage](#visualizando-suas-aterações-dentro-e-fora-do-stage)
-    - [comparar as alterações que estão no seu stage com o seu último commit](#comparar-as-alterações-que-estão-no-seu-stage-com-o-seu-último-commit)
+    - [Verificando status do arquivo](#verificando-status-do-arquivo)
+    - [Visualizando suas aterações](#visualizando-suas-aterações)
     - [Vendo o histórico de Commits](#vendo-o-histórico-de-commits)
     - [Ver algumas estatísticas abreviadas para cada commit](#ver-algumas-estatísticas-abreviadas-para-cada-commit)
-    - [Removendo Arquivos ` `](#removendo-arquivos--)
+    - [Removendo Arquivos](#removendo-arquivos)
     - [Renomeando arquivos](#renomeando-arquivos)
     - [Desfazendo coisas](#desfazendo-coisas)
     - [Desfazendo alterações](#desfazendo-alterações)
@@ -80,10 +84,9 @@ $ brew install git
 No terminal execute os comandos:
 
 ```
-$ git config --global user.name "Programdor"
-$ git config --global user.email progrmador@gmail.com
+$ git config --global user.name "seu.user"
+$ git config --global user.email seu.email@gmail.com
 ```
-⚠️ utilize seu nome é e-mail.
 
 ### Editor
 Usando o Visual Studio Code como editor:
@@ -109,25 +112,20 @@ $ git --version
 $ git config --list
 ```
 
-# Versionando seu  código
+# Inicializando um Repositório em um Diretório Existente
 
-Para criar um repositório utilize o comando.
+### Para criar um repositório utilize o comando
 ```
 $ git init
 ```
 
-Rastreando todas as alterções com   ` git add .` ou um arquivo em específicou com nome do arquivo.
+### Rastreando todas as alterções de uma vez só
 
 ```
-$ git add README.md
+$ git add .
 ```
 
-Vendo a situação dos arquivos no repositório.
-
-```
-$ git status
-```
-
+### Salvando as alterações
 É uma boa prática enviar uma mensagem utilizando `-m` com as
 alterações que foram feitas.
 
@@ -135,35 +133,46 @@ alterações que foram feitas.
 $ git commit -m "first commit"
 ```
 
-Enviando as alterções para repositório remoto.
+### Enviando as alterções
 
 ```
 $ git push 
 
 ```
 
-⚠️ Forneça seu usuário e senha do GitHub quando solicitado ou token ou a chave SSH.
+⚠️ Forneça seu usuário e senha quando solicitado token ou a chave SSH.
 
-### Recebendo as mudanças
-
-```
-$ git pull
-```
-
-
-### Clonando um repositório existente
+### Clonando um repositório 
 
 ```
 $ git clone URL
 ```
 
-### Visualizando suas aterações dentro e fora do stage
+### Recebendo as mudanças
+
+sincronizar o repositório local com as mudanças do remoto.
+
+```
+$ git pull
+```
+
+### Verificando status do arquivo
+
+Lista os arquivos modificados e o conteúdo da área de stage.
+
+```
+$ git status
+```
+
+### Visualizando suas aterações    
+
+Mostra detalhadamente quais foram.
 
 ```
 $ git diff
 ```
 
-###  comparar as alterações que estão no seu stage com o seu último commit
+👇comparar as alterações que estão no seu stage com o seu último commit.
 
 ```
 $ git diff --staged
@@ -180,7 +189,8 @@ $ git log
 ```
 $ git log --stat
 ```
-**👇🏾 Algumas opções simples de formatações de retorno para `git log  `.**
+
+**👇 Algumas opções simples de formatações de retorno para `git log  `.**
 
 | Opções          | Descrição                                                     | 
 | --------        | :------------------------------------------------------------ | 
@@ -195,14 +205,14 @@ $ git log --stat
 
 ⚠️ Aperte a tecla **q** para sair dos resultados do ` git log` .
 
-### Removendo Arquivos ` ` 
+### Removendo Arquivos
 
 ```
 $ git rm 
 ou
 $ git rm  README.md
 ```
-👇🏾 você pode querer fazer é manter o arquivo no seu diretório de trabalho, mas
+👇 você pode querer fazer é manter o arquivo no seu diretório de trabalho, mas
 removê-lo da sua área de stage.
 
 ```

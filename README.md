@@ -24,9 +24,9 @@
     - [Verificar a versão do git](#verificar-a-versão-do-git)
     - [Testando suas configurações](#testando-suas-configurações)
 - [Inicializando um Repositório em um Diretório Existente](#inicializando-um-repositório-em-um-diretório-existente)
-    - [Para criar um repositório utilize o comando](#para-criar-um-repositório-utilize-o-comando)
+    - [Para criar um repositório](#para-criar-um-repositório)
     - [Rastreando todas as alterções de uma vez só](#rastreando-todas-as-alterções-de-uma-vez-só)
-    - [Salvando as alterações](#salvando-as-alterações)
+    - [Registrar as mudanças](#registrar-as-mudanças)
     - [Enviando as alterções](#enviando-as-alterções)
     - [Clonando um repositório](#clonando-um-repositório)
     - [Recebendo as mudanças](#recebendo-as-mudanças)
@@ -38,6 +38,7 @@
     - [Renomeando arquivos](#renomeando-arquivos)
     - [Desfazendo coisas](#desfazendo-coisas)
     - [Desfazendo alterações](#desfazendo-alterações)
+    - [Desfazendo mudanças já rastreadas](#desfazendo-mudanças-já-rastreadas)
 
 <br>
 <br>
@@ -114,7 +115,7 @@ $ git config --list
 
 # Inicializando um Repositório em um Diretório Existente
 
-### Para criar um repositório utilize o comando
+### Para criar um repositório 
 ```
 $ git init
 ```
@@ -125,12 +126,12 @@ $ git init
 $ git add .
 ```
 
-### Salvando as alterações
-É uma boa prática enviar uma mensagem utilizando `-m` com as
-alterações que foram feitas.
+### Registrar as mudanças
+
+ ⚠️ É uma boa prática utilizando `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.
 
 ```
-$ git commit -m "first commit"
+$ git commit -m "sua mensagem aqui"
 ```
 
 ### Enviando as alterções
@@ -193,7 +194,7 @@ $ git log --stat
 **👇 Algumas opções simples de formatações de retorno para `git log  `.**
 
 | Opções          | Descrição                                                     | 
-| --------        | :------------------------------------------------------------ | 
+| :--------        | :------------------------------------------------------------ | 
 | -p              | Mostra o patch introduzido com cada commit.                                         |    
 | --shortstat     | Exibe apenas a linha informando a alteração, inserção e exclusão do comando --stat. |  
 | --name-only     | Mostra a lista de arquivos modificados após as informações de commit.               | 
@@ -208,8 +209,6 @@ $ git log --stat
 ### Removendo Arquivos
 
 ```
-$ git rm 
-ou
 $ git rm  README.md
 ```
 👇 você pode querer fazer é manter o arquivo no seu diretório de trabalho, mas
@@ -231,10 +230,18 @@ $ git commit --amend
 ```
 
 ### Desfazendo alterações
-É importante entender que o `git checkout -- <arquivo>` é um a comando
-perigoso. Qualquer modificação que você fez no arquivo se foi.
+
+⚠️ É importante entender que o `git checkout -- <arquivo>` é um comando
+***perigoso***. Qualquer modificação que você fez no arquivo se foi.
+
 ```
 $ git checkout
+```
+
+### Desfazendo mudanças já rastreadas
+
+```
+$ git reset
 ```
 
 

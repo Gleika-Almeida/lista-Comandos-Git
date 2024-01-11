@@ -240,8 +240,10 @@ $ git checkout
 
 ### Desfazendo mudanças já rastreadas
 
+O repositório fica exatamente no estado que estava no último commit.
+
 ```
-$ git reset
+$ git reset --hard
 ```
 
 

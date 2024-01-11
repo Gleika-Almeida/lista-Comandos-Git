@@ -39,6 +39,13 @@
     - [Desfazendo coisas](#desfazendo-coisas)
     - [Desfazendo alterações](#desfazendo-alterações)
     - [Desfazendo mudanças já rastreadas](#desfazendo-mudanças-já-rastreadas)
+- [Gerenciando seus repositórios remotos](#gerenciando-seus-repositórios-remotos)
+    - [Visualizando seus repositórios remotos](#visualizando-seus-repositórios-remotos)
+    - [Adicionar um repositório remoto](#adicionar-um-repositório-remoto)
+    - [Remover um repositório remoto](#remover-um-repositório-remoto)
+    - [Renomear um repositório remoto](#renomear-um-repositório-remoto)
+    - [Exibir informações sobre um repositório remoto](#exibir-informações-sobre-um-repositório-remoto)
+    - [Alterar a URL de um repositório remoto](#alterar-a-url-de-um-repositório-remoto)
 
 <br>
 <br>
@@ -246,13 +253,51 @@ O repositório fica exatamente no estado que estava no último commit.
 $ git reset --hard
 ```
 
+# Gerenciando seus repositórios remotos
 
+### Visualizando seus repositórios remotos
+`-v` mostra também as URLs associadas a cada repositório.
 
+```
+$ git remote
+$ git remote -v  
+```
 
+### Adicionar um repositório remoto
+Este comando adiciona um novo repositório remoto ao seu projeto. Você dá um nome por exemplo origin ao repositório  e especifica a URL onde ele está localizado.
 
+```
+$ git remote add <nome-do-repositório> <url-do-repositorio>
+```
+⚠️ Lembrando que ` <  >` e só para informar o que colocar. Não faz parte do comando!
 
+### Remover um repositório remoto
+Remove a associação entre o seu repositório local e um repositório remoto.
 
+```
+$ git remote remove <nome-do-repositório>
+ou
+$ git remote rm <nome-do-repositório>
+```
 
+### Renomear um repositório remoto
+
+```
+$ git remote rename <nome-atual> <novo-nome>
+```
+
+### Exibir informações sobre um repositório remoto
+Fornece informações detalhadas sobre um repositório remoto, incluindo as branches remotas e suas relações com as branches locais.
+
+```
+$ git remote show <nome-remoto>
+```
+
+### Alterar a URL de um repositório remoto
+Permite que você atualize a URL de um repositório remoto.
+```
+$ git remote set-url <nome-remoto> <nova-url>
+```
 
 <div align="center">
 <img  height="200" width="200" alt="GIt" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ0MTlzbGZ4dzg3eDBsdTYxZmdrajlwN2hzdGVrajJsN3pwY3lzZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7mMsa2P76o5Xn8NAD/giphy.gif"/>

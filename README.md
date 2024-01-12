@@ -46,6 +46,14 @@
     - [Renomear um repositório remoto](#renomear-um-repositório-remoto)
     - [Exibir informações sobre um repositório remoto](#exibir-informações-sobre-um-repositório-remoto)
     - [Alterar a URL de um repositório remoto](#alterar-a-url-de-um-repositório-remoto)
+- [Criando Tags](#criando-tags)
+    - [Listando suas Tags](#listando-suas-tags)
+    - [Criando uma tag leve](#criando-uma-tag-leve)
+    - [Criando uma tag anotada](#criando-uma-tag-anotada)
+    - [Envie a tag para o repositório remoto](#envie-a-tag-para-o-repositório-remoto)
+    - [ver que criou uma tag para o commit](#ver-que-criou-uma-tag-para-o-commit)
+    - [Compartilhando Tags](#compartilhando-tags)
+    - [Enviar muitas tags de uma vez](#enviar-muitas-tags-de-uma-vez)
 
 <br>
 <br>
@@ -145,7 +153,6 @@ $ git commit -m "sua mensagem aqui"
 
 ```
 $ git push 
-
 ```
 
 ⚠️ Forneça seu usuário e senha quando solicitado token ou a chave SSH.
@@ -267,7 +274,7 @@ $ git remote -v
 Este comando adiciona um novo repositório remoto ao seu projeto. Você dá um nome por exemplo origin ao repositório  e especifica a URL onde ele está localizado.
 
 ```
-$ git remote add <nome-do-repositório> <url-do-repositorio>
+$ git remote add <nome_do_repositório> <url_do_repositorio>
 ```
 ⚠️ Lembrando que ` <  >` e só para informar o que colocar. Não faz parte do comando!
 
@@ -275,32 +282,87 @@ $ git remote add <nome-do-repositório> <url-do-repositorio>
 Remove a associação entre o seu repositório local e um repositório remoto.
 
 ```
-$ git remote remove <nome-do-repositório>
+$ git remote remove <nome_do_repositório>
 ou
-$ git remote rm <nome-do-repositório>
+$ git remote rm <nome_do_repositório>
 ```
 
 ### Renomear um repositório remoto
 
 ```
-$ git remote rename <nome-atual> <novo-nome>
+$ git remote rename <nome_atual>   <novo_nome>
 ```
 
 ### Exibir informações sobre um repositório remoto
 Fornece informações detalhadas sobre um repositório remoto, incluindo as branches remotas e suas relações com as branches locais.
 
 ```
-$ git remote show <nome-remoto>
+$ git remote show <nome_remoto>
 ```
 
 ### Alterar a URL de um repositório remoto
 Permite que você atualize a URL de um repositório remoto.
+
 ```
-$ git remote set-url <nome-remoto> <nova-url>
+$ git remote set-url <nome_remoto> <nova_url>
 ```
 
+# Criando Tags
+
+O **Git** usa dois tipos de tags: **Leve** e **Anotada**. As tags são usadas para marcar pontos específicos na história do seu repositório, geralmente para identificar versões estáveis ou lançamentos importantes.
+
+### Listando suas Tags
+
+```
+$ git tag
+```
+
+###  Criando uma tag leve 
+
+```
+$ git tag nome_da_tag <hash_do_commit>
+ ```
+👇 assim
+ ```
+$ git tag v1.0.0 2a1b6c3
+```
+### Criando uma tag anotada
+
+```
+$ git tag -a nome_da_tag -m "Mensagem da tag" <hash_do_commit>
+```
+### Envie a tag para o repositório remoto 
+Se você deseja **compartilhar** a tag com outras pessoas, envie-a para o repositório remoto:
+
+```
+$ git push origin nome_da_tag
+```
+
+### ver que criou uma tag para o commit
+
+```
+$ git show nome_da_tag
+```
+
+### Compartilhando Tags
+
+Por padrão, o comando **git push** não envia as tags para os servidores remoto. Você terá que
+explicitamente enviar as tags para o servidor de compartilhamento **depois** de tê-las criado.
+
+```
+ $ git push origin nome_da_tag
+ ```
+
+ ###  Enviar muitas tags de uma vez
+
+ ```
+ $ git push origin --tags
+```
+
+<br>
+<br>
 <div align="center">
-<img  height="200" width="200" alt="GIt" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ0MTlzbGZ4dzg3eDBsdTYxZmdrajlwN2hzdGVrajJsN3pwY3lzZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7mMsa2P76o5Xn8NAD/giphy.gif"/>
+<img  height="100" width="100" alt="GIt" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ0MTlzbGZ4dzg3eDBsdTYxZmdrajlwN2hzdGVrajJsN3pwY3lzZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7mMsa2P76o5Xn8NAD/giphy.gif"/>
 </div>
 
 <h5 align="center">Made with 💜 and Markdown.</h5>

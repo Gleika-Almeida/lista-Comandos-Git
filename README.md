@@ -54,6 +54,13 @@
     - [ver que criou uma tag para o commit](#ver-que-criou-uma-tag-para-o-commit)
     - [Compartilhando Tags](#compartilhando-tags)
     - [Enviar muitas tags de uma vez](#enviar-muitas-tags-de-uma-vez)
+- [Branches](#branches)
+    - [Criar um novo branch](#criar-um-novo-branch)
+    - [Mudar para o novo branch](#mudar-para-o-novo-branch)
+- [Visualizando os Branches](#visualizando-os-branches)
+    - [Listar todos os branches no repositório](#listar-todos-os-branches-no-repositório)
+    - [Listar todos os branches e destacar o branch atual](#listar-todos-os-branches-e-destacar-o-branch-atual)
+    - [Listar branches remotos](#listar-branches-remotos)
 
 <br>
 <br>
@@ -354,10 +361,45 @@ explicitamente enviar as tags para o servidor de compartilhamento **depois** de 
  ```
 
  ###  Enviar muitas tags de uma vez
-
+ 
  ```
  $ git push origin --tags
 ```
+
+
+# Branches
+É a forma que o git separa as versões dos projetos.
+
+### Criar um novo branch
+ ```
+$ git branch <nome_do_branch>
+ ```
+
+### Mudar para o novo branch
+
+Isso cria um novo branch e muda para ele.
+ ```
+$ git switch -c <nome_do_branch>
+ ```
+# Visualizando os Branches
+
+### Listar todos os branches no repositório
+ ```
+$ git branch
+ ```
+
+### Listar todos os branches e destacar o branch atual
+ ```
+$ git branch -v
+ ```
+
+### Listar branches remotos
+ ```
+$ git branch -r
+ ```
+
+
+
 
 <br>
 <br>

@@ -57,10 +57,12 @@
 - [Branches](#branches)
     - [Criar um novo branch](#criar-um-novo-branch)
     - [Mudar para o novo branch](#mudar-para-o-novo-branch)
-- [Visualizando os Branches](#visualizando-os-branches)
     - [Listar todos os branches no repositório](#listar-todos-os-branches-no-repositório)
     - [Listar todos os branches e destacar o branch atual](#listar-todos-os-branches-e-destacar-o-branch-atual)
     - [Listar branches remotos](#listar-branches-remotos)
+    - [Trocando de branch](#trocando-de-branch)
+    - [Deletando](#deletando)
+    - [Ainda não mesclou](#ainda-não-mesclou)
 
 <br>
 <br>
@@ -368,9 +370,11 @@ explicitamente enviar as tags para o servidor de compartilhamento **depois** de 
 
 
 # Branches
-É a forma que o git separa as versões dos projetos.
+
+É a forma que o **git** separa as versões dos projetos.
 
 ### Criar um novo branch
+
  ```
 $ git branch <nome_do_branch>
  ```
@@ -378,28 +382,50 @@ $ git branch <nome_do_branch>
 ### Mudar para o novo branch
 
 Isso cria um novo branch e muda para ele.
+
  ```
 $ git switch -c <nome_do_branch>
  ```
-# Visualizando os Branches
 
 ### Listar todos os branches no repositório
+
  ```
 $ git branch
  ```
 
 ### Listar todos os branches e destacar o branch atual
+
  ```
 $ git branch -v
  ```
 
 ### Listar branches remotos
+
  ```
 $ git branch -r
  ```
 
+### Trocando de branch
+ ```
+$ git checkout  <nome_do_branch>
+ ```
 
+### Deletando 
 
+Não é possível remover uma branch enquanto estivermos nela. Vá para outa branch. Delete com a opção `-d` uma branch que possui commits ainda não aplicados.
+ ```
+$ git branch -d <nome_do_branch>
+ ```
+
+⚠️ Para removermos a branch se tivermos feito algum commit, devemos utilizar a opção `-D`.
+ ```
+$ git branch -D <nome_do_branch>
+ ```
+
+### Ainda não mesclou
+ ```
+$ git branch --no-merged
+ ```
 
 <br>
 <br>

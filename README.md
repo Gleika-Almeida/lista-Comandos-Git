@@ -62,10 +62,10 @@
     - [Listar branches remotos](#listar-branches-remotos)
     - [Trocando de branch](#trocando-de-branch)
     - [Deletando](#deletando)
-    - [branches que  ainda não mesclou](#branches-que--ainda-não-mesclou)
-    - [sincronizar seu trabalho](#sincronizar-seu-trabalho)
+    - [Branches que  ainda não mesclou](#branches-que--ainda-não-mesclou)
+    - [Sincronizar seu trabalho](#sincronizar-seu-trabalho)
     - [Empurrando](#empurrando)
-    - [enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
+    - [Enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
 
 <br>
 <br>
@@ -425,12 +425,12 @@ $ git branch -d <nome_do_branch>
 $ git branch -D <nome_do_branch>
  ```
 
-### branches que  ainda não mesclou
+### Branches que  ainda não mesclou
  ```
 $ git branch --no-merged
  ```
 
- ### sincronizar seu trabalho
+ ### Sincronizar seu trabalho
 
 ```
 $ git fetch origin
@@ -440,7 +440,7 @@ $ git fetch origin
 ```
 $ git push <remoto> <branch>
 ```
-### enviar para um servidor remoto
+### Enviar para um servidor remoto
 ```
 $ git push origin branch_local:remoto
 ```

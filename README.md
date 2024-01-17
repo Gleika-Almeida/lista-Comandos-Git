@@ -11,7 +11,7 @@
 <br>
 
 #### Índice
-- [Introdução](#introdução)
+- [Introdução a Git](#introdução-a-git)
     - [O que é controle de versão?](#o-que-é-controle-de-versão)
     - [O que é Git ?](#o-que-é-git-)
 - [Configuração Inicial](#configuração-inicial)
@@ -51,14 +51,6 @@
     - [Renomear um repositório remoto](#renomear-um-repositório-remoto)
     - [Exibir informações sobre um repositório remoto](#exibir-informações-sobre-um-repositório-remoto)
     - [Alterar a URL de um repositório remoto](#alterar-a-url-de-um-repositório-remoto)
-- [Criando Tags](#criando-tags)
-    - [Listando suas Tags](#listando-suas-tags)
-    - [Criando uma tag leve](#criando-uma-tag-leve)
-    - [Criando uma tag anotada](#criando-uma-tag-anotada)
-    - [Envie a tag para o repositório remoto](#envie-a-tag-para-o-repositório-remoto)
-    - [ver que criou uma tag para o commit](#ver-que-criou-uma-tag-para-o-commit)
-    - [Compartilhando Tags](#compartilhando-tags)
-    - [Enviar muitas tags de uma vez](#enviar-muitas-tags-de-uma-vez)
 - [Branches](#branches)
     - [Criar um novo branch](#criar-um-novo-branch)
     - [Mudar para o novo branch](#mudar-para-o-novo-branch)
@@ -71,11 +63,26 @@
     - [Sincronizar seu trabalho](#sincronizar-seu-trabalho)
     - [Empurrando](#empurrando)
     - [Enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
+    - [mescla seu branch atual](#mescla-seu-branch-atual)
+    - [Unindo branches](#unindo-branches)
+    - [Salvar as Modificaçoes Atuais](#salvar-as-modificaçoes-atuais)
+    - [Recuperando Stash](#recuperando-stash)
+    - [Removendo a stash](#removendo-a-stash)
+    - [Deletar uma stash específica](#deletar-uma-stash-específica)
+- [Tags](#tags)
+    - [Criando Tag](#criando-tag)
+    - [Lista as Tag](#lista-as-tag)
+    - [Deletando](#deletando-1)
+    - [Criando uma tag Leve](#criando-uma-tag-leve)
+    - [Criando uma tag Anotada](#criando-uma-tag-anotada)
+    - [Exibir as informações](#exibir-as-informações)
+    - [Compartilhando Tags](#compartilhando-tags)
+    - [Enviar muitas tags de uma vez](#enviar-muitas-tags-de-uma-vez)
 
 <br>
 <div align="center">
 
-# Introdução
+# Introdução a Git
 
 </div>
 
@@ -201,9 +208,7 @@ Para salvar as alterações no repositório.
 $ git commit -m "sua mensagem aqui"
 ```
 
- ⚠️ É uma boa prática utilizar `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.  Forneça seu usuário e senha quando solicitado token ou a chave SSH.
-
-
+ ⚠️ É uma boa prática utilizar `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.
 
 ### Enviando as alterções
 
@@ -254,6 +259,7 @@ $ git log --stat
 ```
 
 **👇 Algumas opções simples de formatações de retorno para `git log  `.**
+
 
 | Opções          | Descrição                                                     | 
 | :--------        | :------------------------------------------------------------ | 
@@ -311,6 +317,7 @@ $ git reset --hard
 # Gerenciando seus repositórios remotos
 
 ### Visualizando seus repositórios remotos
+
 `-v` mostra também as URLs associadas a cada repositório.
 
 ```
@@ -319,20 +326,22 @@ $ git remote -v
 ```
 
 ### Adicionar um repositório remoto
+
 Este comando adiciona um novo repositório remoto ao seu projeto. Você dá um nome por exemplo origin ao repositório  e especifica a URL onde ele está localizado.
 
 ```
-$ git remote add <nome_do_repositório> <url_do_repositorio>
+$ git remote add <nome_repositório> <url_do_repositorio>
 ```
 ⚠️ Lembrando que ` <  >` e só para informar o que colocar. Não faz parte do comando!
 
 ### Remover um repositório remoto
+
 Remove a associação entre o seu repositório local e um repositório remoto.
 
 ```
-$ git remote remove <nome_do_repositório>
+$ git remote remove <nome_repositório>
 ou
-$ git remote rm <nome_do_repositório>
+$ git remote rm <nome_repositório>
 ```
 
 ### Renomear um repositório remoto
@@ -342,6 +351,7 @@ $ git remote rename <nome_atual>   <novo_nome>
 ```
 
 ### Exibir informações sobre um repositório remoto
+
 Fornece informações detalhadas sobre um repositório remoto, incluindo as branches remotas e suas relações com as branches locais.
 
 ```
@@ -355,57 +365,6 @@ Permite que você atualize a URL de um repositório remoto.
 $ git remote set-url <nome_remoto> <nova_url>
 ```
 
-# Criando Tags
-
-O **Git** usa dois tipos de tags: **Leve** e **Anotada**. As tags são usadas para marcar pontos específicos na história do seu repositório, geralmente para identificar versões estáveis ou lançamentos importantes.
-
-### Listando suas Tags
-
-```
-$ git tag
-```
-
-###  Criando uma tag leve 
-
-```
-$ git tag nome_da_tag <hash_do_commit>
- ```
-👇 assim
- ```
-$ git tag v1.0.0 2a1b6c3
-```
-### Criando uma tag anotada
-
-```
-$ git tag -a nome_da_tag -m "Mensagem da tag" <hash_do_commit>
-```
-### Envie a tag para o repositório remoto 
-Se você deseja **compartilhar** a tag com outras pessoas, envie-a para o repositório remoto:
-
-```
-$ git push origin nome_da_tag
-```
-
-### ver que criou uma tag para o commit
-
-```
-$ git show nome_da_tag
-```
-
-### Compartilhando Tags
-
-Por padrão, o comando **git push** não envia as tags para os servidores remoto. Você terá que
-explicitamente enviar as tags para o servidor de compartilhamento **depois** de tê-las criado.
-
-```
- $ git push origin nome_da_tag
- ```
-
- ###  Enviar muitas tags de uma vez
- 
- ```
- $ git push origin --tags
-```
 
 
 # Branches
@@ -415,15 +374,15 @@ explicitamente enviar as tags para o servidor de compartilhamento **depois** de 
 ### Criar um novo branch
 
  ```
-$ git branch <nome_do_branch>
+$ git branch <nome_branch>
  ```
 
 ### Mudar para o novo branch
 
-Isso cria um novo branch e muda para ele.
+este comando cria um novo branch e muda para ele.
 
  ```
-$ git switch -c <nome_do_branch>
+$ git switch -c <nome_branch>
  ```
 
 ### Listar todos os branches no repositório
@@ -446,7 +405,7 @@ $ git branch -r
 
 ### Trocando de branch
  ```
-$ git checkout  <nome_do_branch>
+$ git checkout  <nome_branch>
  ```
 
 ### Deletando 
@@ -458,7 +417,7 @@ $ git branch -d <nome_do_branch>
 
 ⚠️ Para removermos a branch se tivermos feito algum commit, devemos utilizar a opção `-D`.
  ```
-$ git branch -D <nome_do_branch>
+$ git branch -D <nome_branch>
  ```
 
 ### Branches que  ainda não mesclou
@@ -476,10 +435,114 @@ $ git fetch origin
 ```
 $ git push <remoto> <branch>
 ```
+
 ### Enviar para um servidor remoto
 ```
 $ git push origin branch_local:remoto
 ```
+
+### mescla seu branch atual
+
+``` 
+$ git merge origin/<nome_branch>
+
+```
+### Unindo branches
+
+```
+$ git merge <nome_branch>
+```
+
+### Salvar as Modificaçoes Atuais
+
+```
+$ git stash
+```
+
+### Recuperando Stash
+
+```
+$ git stash list
+$ git stash <nome>
+```
+
+
+### Removendo a stash
+
+Para limpar totalmente
+
+```
+$ git stash clear
+```
+
+### Deletar uma stash específica
+
+```
+$ git stash drop <nome>
+```
+
+# Tags
+
+As tags são usadas para marcar pontos específicos na história do seu repositório,  para identificar versões estáveis ou lançamentos importantes. Em geral, criamos tags com nomes como **v1.0, v1.1, v2.0** e assim
+por diante.
+
+### Criando Tag
+
+```
+$ git tag  v1.0
+
+```
+
+### Lista as Tag
+
+```
+$ git tag
+```
+
+### Deletando 
+```
+ $ git tag -d verssao1tag
+```
+
+###  Criando uma tag Leve 
+
+Funcionando apenas como um ponteiro para um ponto específico no projeto.
+
+ ```
+$ git tag v1.0  2a1b6c3
+```
+
+### Criando uma tag Anotada
+
+Contem marcações de nome, email, data e uma mensagem de tag.
+
+```
+$ git tag -a v2.0 -m "Liberando versão urgente"
+```
+
+### Exibir as informações
+
+```
+$ git show -s v1.1
+```
+
+### Compartilhando Tags
+
+Por padrão, o comando **git push** não envia as tags para os servidores remoto. Você terá que
+explicitamente enviar as tags para o servidor de compartilhamento **depois** de tê-las criado.
+
+```
+$ git push origin v1.5
+ ```
+
+ ###  Enviar muitas tags de uma vez
+ 
+ ```
+ $ git push origin --tags
+```
+
+
+
 <br>
 <br>
 <div align="center">

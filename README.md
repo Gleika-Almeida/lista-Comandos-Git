@@ -11,24 +11,29 @@
 <br>
 
 #### Índice
-- [Instalação](#instalação)
+- [Introdução](#introdução)
+    - [O que é controle de versão?](#o-que-é-controle-de-versão)
+    - [O que é Git ?](#o-que-é-git-)
+- [Configuração Inicial](#configuração-inicial)
     - [Instalando Debian/Ubuntu](#instalando-debianubuntu)
     - [Este PPA fornece a versão mais recente estável do Git no Ubuntu.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubuntu)
     - [Fedora](#fedora)
   - [Instalando no Mac](#instalando-no-mac)
     - [MacPorts](#macports)
     - [Homebrew](#homebrew)
-- [Configuração](#configuração)
+- [Configuração do Usuário](#configuração-do-usuário)
     - [Nome e e-mail](#nome-e-e-mail)
     - [Editor](#editor)
-    - [Verificar a versão do git](#verificar-a-versão-do-git)
-    - [Testando suas configurações](#testando-suas-configurações)
+    - [Verificar a Versão do Git](#verificar-a-versão-do-git)
+    - [Testando suas Configurações](#testando-suas-configurações)
 - [Inicializando um Repositório](#inicializando-um-repositório)
-    - [Para criar um repositório](#para-criar-um-repositório)
-    - [Rastreando todas as alterções de uma vez só](#rastreando-todas-as-alterções-de-uma-vez-só)
-    - [Registrar as mudanças](#registrar-as-mudanças)
+    - [Inicializando um Novo Repositório](#inicializando-um-novo-repositório)
+    - [Clonando Um Repositório Existente](#clonando-um-repositório-existente)
+- [Trabalhando Com Alterações](#trabalhando-com-alterações)
+    - [Verificando o Status](#verificando-o-status)
+    - [Alterações](#alterações)
+    - [Criando um Commit](#criando-um-commit)
     - [Enviando as alterções](#enviando-as-alterções)
-    - [Clonando um repositório](#clonando-um-repositório)
     - [Recebendo as mudanças](#recebendo-as-mudanças)
     - [Verificando status do arquivo](#verificando-status-do-arquivo)
     - [Visualizando suas aterações](#visualizando-suas-aterações)
@@ -68,9 +73,24 @@
     - [Enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
 
 <br>
+<div align="center">
+
+# Introdução
+
+</div>
+
+### O que é controle de versão?
+
+È um sistema que registra alterações é mantêm um histórico das modificações feitas em um conjunto de arquivos, rastreando quem fez as alterações, quando foram feitas e quais foram as mudanças específicas.
+
+### O que é Git ?
+
+O **Git** é um eficiente sistema de **controle de versão** que se destaca por sua estrutura interna, funcionando como uma máquina do tempo extremamente rápida, além de desempenhar um papel exemplar como um robô de integração competente. Criado em **2005** por ***Linus Torvalds***, o visionário por trás do ***Linux***, o **Git** surgiu como resposta ao descontentamento com o ***BitKeeper***, o então sistema de controle de versão utilizado no desenvolvimento do *kernel do Linux*. Sua versatilidade e eficácia contribuem para a colaboração eficiente e a gestão transparente do desenvolvimento de software em diversas comunidades de **Código aberto.**
+
+
 <br>
 
-# Instalação
+# Configuração Inicial
 
 ### Instalando Debian/Ubuntu
 
@@ -106,7 +126,7 @@ $ sudo port install git
 $ brew install git
 ```
 
-# Configuração 
+# Configuração do Usuário 
 
 ### Nome e e-mail
 No terminal execute os comandos:
@@ -128,13 +148,13 @@ Sublime Text como seu editor:
 $ git config --global core.editor "subl -n -w"
 ```
 
-### Verificar a versão do git
+### Verificar a Versão do Git
 
 ```
 $ git --version
 ```
 
-### Testando suas configurações
+### Testando suas Configurações
 
 ```
 $ git config --list
@@ -142,37 +162,53 @@ $ git config --list
 
 # Inicializando um Repositório 
 
-### Para criar um repositório 
+### Inicializando um Novo Repositório 
 ```
 $ git init
 ```
 
-### Rastreando todas as alterções de uma vez só
+### Clonando Um Repositório Existente 
 
+```
+$ git clone URL_DO_REPOSITORIO
+```
+
+# Trabalhando Com Alterações
+
+### Verificando o Status
+Veja as alterações pendentes.
+
+``` 
+$ git status
+
+```
+### Alterações 
+Adicione alterações específicas.
+``` 
+$ git add nome-do-arquivo
+
+``` 
+***ou***
+
+Todas ao stage para prepará-las para **commit**.
 ```
 $ git add .
 ```
-
-### Registrar as mudanças
-
- ⚠️ É uma boa prática utilizando `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.
+### Criando um Commit
+Para salvar as alterações no repositório.
 
 ```
 $ git commit -m "sua mensagem aqui"
 ```
 
+ ⚠️ É uma boa prática utilizar `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.  Forneça seu usuário e senha quando solicitado token ou a chave SSH.
+
+
+
 ### Enviando as alterções
 
 ```
 $ git push 
-```
-
-⚠️ Forneça seu usuário e senha quando solicitado token ou a chave SSH.
-
-### Clonando um repositório 
-
-```
-$ git clone URL
 ```
 
 ### Recebendo as mudanças

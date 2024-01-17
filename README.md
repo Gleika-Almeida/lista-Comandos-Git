@@ -23,7 +23,7 @@
     - [Editor](#editor)
     - [Verificar a versão do git](#verificar-a-versão-do-git)
     - [Testando suas configurações](#testando-suas-configurações)
-- [Inicializando um Repositório em um Diretório Existente](#inicializando-um-repositório-em-um-diretório-existente)
+- [Inicializando um Repositório](#inicializando-um-repositório)
     - [Para criar um repositório](#para-criar-um-repositório)
     - [Rastreando todas as alterções de uma vez só](#rastreando-todas-as-alterções-de-uma-vez-só)
     - [Registrar as mudanças](#registrar-as-mudanças)
@@ -62,7 +62,10 @@
     - [Listar branches remotos](#listar-branches-remotos)
     - [Trocando de branch](#trocando-de-branch)
     - [Deletando](#deletando)
-    - [Ainda não mesclou](#ainda-não-mesclou)
+    - [branches que  ainda não mesclou](#branches-que--ainda-não-mesclou)
+    - [sincronizar seu trabalho](#sincronizar-seu-trabalho)
+    - [Empurrando](#empurrando)
+    - [enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
 
 <br>
 <br>
@@ -137,7 +140,7 @@ $ git --version
 $ git config --list
 ```
 
-# Inicializando um Repositório em um Diretório Existente
+# Inicializando um Repositório 
 
 ### Para criar um repositório 
 ```
@@ -422,11 +425,25 @@ $ git branch -d <nome_do_branch>
 $ git branch -D <nome_do_branch>
  ```
 
-### Ainda não mesclou
+### branches que  ainda não mesclou
  ```
 $ git branch --no-merged
  ```
 
+ ### sincronizar seu trabalho
+
+```
+$ git fetch origin
+```
+ ### Empurrando
+
+```
+$ git push <remoto> <branch>
+```
+### enviar para um servidor remoto
+```
+$ git push origin branch_local:remoto
+```
 <br>
 <br>
 <div align="center">

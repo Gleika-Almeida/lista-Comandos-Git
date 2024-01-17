@@ -144,13 +144,13 @@ $ git config --global user.email seu.email@gmail.com
 ```
 
 ### Editor
-Usando o Visual Studio Code como editor:
+Visual Studio Code como editor:
 
 ```
 $ git config --global core.editor "code --wait"
 ```
 
-Sublime Text como seu editor:
+Sublime como seu editor:
 ```
 $ git config --global core.editor "subl -n -w"
 ```
@@ -191,17 +191,20 @@ $ git status
 ```
 ### Alterações 
 Adicione alterações específicas.
+
 ``` 
-$ git add nome-do-arquivo
+$ git add <nome_arquivo>
 
 ``` 
 ***ou***
 
 Todas ao stage para prepará-las para **commit**.
+
 ```
 $ git add .
 ```
 ### Criando um Commit
+
 Para salvar as alterações no repositório.
 
 ```
@@ -279,7 +282,7 @@ $ git log --stat
 ```
 $ git rm  README.md
 ```
-👇 você pode querer fazer é manter o arquivo no seu diretório de trabalho, mas
+👇 você pode querer manter o arquivo no seu diretório de trabalho, mas
 removê-lo da sua área de stage.
 
 ```
@@ -293,6 +296,7 @@ O mesmo também pode ser movido para outra pasta.
 $ git mv
 ```
 ### Desfazendo coisas
+
 ```
 $ git commit --amend
 ```
@@ -359,13 +363,12 @@ $ git remote show <nome_remoto>
 ```
 
 ### Alterar a URL de um repositório remoto
+
 Permite que você atualize a URL de um repositório remoto.
 
 ```
 $ git remote set-url <nome_remoto> <nova_url>
 ```
-
-
 
 # Branches
 
@@ -379,7 +382,7 @@ $ git branch <nome_branch>
 
 ### Mudar para o novo branch
 
-este comando cria um novo branch e muda para ele.
+Este comando cria um novo branch e muda para ele.
 
  ```
 $ git switch -c <nome_branch>
@@ -415,12 +418,13 @@ Não é possível remover uma branch enquanto estivermos nela. Vá para outa bra
 $ git branch -d <nome_do_branch>
  ```
 
-⚠️ Para removermos a branch se tivermos feito algum commit, devemos utilizar a opção `-D`.
+⚠️ Para remover a branch se tiver feito algum commit, deve utilizar a opção `-D`.
  ```
 $ git branch -D <nome_branch>
  ```
 
 ### Branches que  ainda não mesclou
+
  ```
 $ git branch --no-merged
  ```
@@ -466,10 +470,9 @@ $ git stash list
 $ git stash <nome>
 ```
 
-
 ### Removendo a stash
 
-Para limpar totalmente
+Para limpar totalmente.
 
 ```
 $ git stash clear

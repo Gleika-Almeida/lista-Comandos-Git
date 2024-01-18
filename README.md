@@ -12,8 +12,8 @@
 
 #### Índice
 - [Introdução a Git](#introdução-a-git)
-    - [O que é controle de versão?](#o-que-é-controle-de-versão)
     - [O que é Git ?](#o-que-é-git-)
+    - [O que é controle de versão?](#o-que-é-controle-de-versão)
 - [Configuração Inicial](#configuração-inicial)
     - [Instalando Debian/Ubuntu](#instalando-debianubuntu)
     - [Este PPA fornece a versão mais recente estável do Git no Ubuntu.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubuntu)
@@ -53,11 +53,11 @@
     - [Alterar a URL de um repositório remoto](#alterar-a-url-de-um-repositório-remoto)
 - [Branches](#branches)
     - [Criar um novo branch](#criar-um-novo-branch)
-    - [Mudar para o novo branch](#mudar-para-o-novo-branch)
+    - [Mudar para o novo ramo](#mudar-para-o-novo-ramo)
     - [Listar todos os branches no repositório](#listar-todos-os-branches-no-repositório)
+    - [Trocando de branch](#trocando-de-branch)
     - [Listar todos os branches e destacar o branch atual](#listar-todos-os-branches-e-destacar-o-branch-atual)
     - [Listar branches remotos](#listar-branches-remotos)
-    - [Trocando de branch](#trocando-de-branch)
     - [Deletando](#deletando)
     - [Branches que  ainda não mesclou](#branches-que--ainda-não-mesclou)
     - [Sincronizar seu trabalho](#sincronizar-seu-trabalho)
@@ -71,7 +71,7 @@
     - [Deletar uma stash específica](#deletar-uma-stash-específica)
 - [Tags](#tags)
     - [Criando Tag](#criando-tag)
-    - [Lista as Tag](#lista-as-tag)
+    - [Lista as Tags](#lista-as-tags)
     - [Deletando](#deletando-1)
     - [Criando uma tag Leve](#criando-uma-tag-leve)
     - [Criando uma tag Anotada](#criando-uma-tag-anotada)
@@ -86,15 +86,17 @@
 
 </div>
 
-### O que é controle de versão?
 
-È um sistema que registra alterações é mantêm um histórico das modificações feitas em um conjunto de arquivos, rastreando quem fez as alterações, quando foram feitas e quais foram as mudanças específicas.
 
 ### O que é Git ?
 
 O **Git** é um eficiente sistema de **controle de versão** que se destaca por sua estrutura interna, funcionando como uma máquina do tempo extremamente rápida, além de desempenhar um papel exemplar como um robô de integração competente. Criado em **2005** por ***Linus Torvalds***, o visionário por trás do ***Linux***, o **Git** surgiu como resposta ao descontentamento com o ***BitKeeper***, o então sistema de controle de versão utilizado no desenvolvimento do *kernel do Linux*. Sua versatilidade e eficácia contribuem para a colaboração eficiente e a gestão transparente do desenvolvimento de software em diversas comunidades de **Código aberto.**
 
+### O que é controle de versão?
 
+È um sistema que registra alterações é mantêm um histórico das modificações feitas em um conjunto de arquivos, rastreando quem fez as alterações, quando foram feitas e quais foram as mudanças específicas.
+
+<br>
 <br>
 
 # Configuração Inicial
@@ -374,15 +376,17 @@ $ git remote set-url <nome_remoto> <nova_url>
 
 É a forma que o **git** separa as versões dos projetos.
 
+ramifique cedo, ramifique sempre !
+
 ### Criar um novo branch
 
  ```
 $ git branch <nome_branch>
  ```
 
-### Mudar para o novo branch
+### Mudar para o novo ramo
 
-Este comando cria um novo branch e muda para ele.
+Este comando cria um novo branch (ramo) e muda para ele.
 
  ```
 $ git switch -c <nome_branch>
@@ -392,6 +396,12 @@ $ git switch -c <nome_branch>
 
  ```
 $ git branch
+ ```
+
+### Trocando de branch
+
+ ```
+$ git checkout  <nome_branch>
  ```
 
 ### Listar todos os branches e destacar o branch atual
@@ -406,19 +416,17 @@ $ git branch -v
 $ git branch -r
  ```
 
-### Trocando de branch
- ```
-$ git checkout  <nome_branch>
- ```
 
 ### Deletando 
 
 Não é possível remover uma branch enquanto estivermos nela. Vá para outa branch. Delete com a opção `-d` uma branch que possui commits ainda não aplicados.
+
  ```
 $ git branch -d <nome_do_branch>
  ```
 
 ⚠️ Para remover a branch se tiver feito algum commit, deve utilizar a opção `-D`.
+
  ```
 $ git branch -D <nome_branch>
  ```
@@ -496,13 +504,14 @@ $ git tag  v1.0
 
 ```
 
-### Lista as Tag
+### Lista as Tags
 
 ```
 $ git tag
 ```
 
 ### Deletando 
+
 ```
  $ git tag -d verssao1tag
 ```

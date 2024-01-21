@@ -138,6 +138,7 @@ $ brew install git
 # Configuração do Usuário 
 
 ### Nome e e-mail
+
 No terminal execute os comandos:
 
 ```
@@ -146,6 +147,7 @@ $ git config --global user.email seu.email@gmail.com
 ```
 
 ### Editor
+
 Visual Studio Code como editor:
 
 ```
@@ -153,6 +155,7 @@ $ git config --global core.editor "code --wait"
 ```
 
 Sublime como seu editor:
+
 ```
 $ git config --global core.editor "subl -n -w"
 ```
@@ -172,6 +175,7 @@ $ git config --list
 # Inicializando um Repositório 
 
 ### Inicializando um Novo Repositório 
+
 ```
 $ git init
 ```
@@ -192,6 +196,7 @@ $ git status
 
 ```
 ### Alterações 
+
 Adicione alterações específicas.
 
 ``` 

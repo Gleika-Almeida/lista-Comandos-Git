@@ -109,10 +109,9 @@ $ sudo apt-get install git
 
 ### Este PPA fornece a versão mais recente estável do Git no Ubuntu.
 ```
-$ add-apt-repository  
-$ ppa:git-core/ppa  
-$ apt update
-$ apt install git
+$ add-apt-repository ppa:git-core/ppa  
+$ apt update; apt install git
+
 ```
 
 ### Fedora

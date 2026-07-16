@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentação interativa de comandos Git em português, com exemplos práticos, filtros, busca e boas práticas." />
+    <meta name="keywords" content="Git, GitHub, comandos Git, versionamento, desenvolvimento, programação" />
+    <meta name="author" content="Gleika Almeida" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Git Guide — Documentação Interativa</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <script src="./assets/js/commands.js" defer ></script>
+    <script src="./assets/js/app.js" defer ></script>
+
+</head>
+<body>
+     <a class="skip-link" href="#conteudo-principal">
+      Pular para o conteúdo principal
+    </a>
+
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" href="#inicio" aria-label="Ir para o início">
+          <span class="brand-icon" aria-hidden="true">
+            &lt;/&gt;
+          </span>
+
+          <span class="brand-text">
+            Git Guide
+          </span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Navegação principal">
+          <ul class="navigation-list">
+            <li>
+              <a href="#inicio">
+                Início
+              </a>
+            </li>
+
+            <li>
+              <a href="#comandos">
+                Comandos
+              </a>
+            </li>
+
+            <li>
+              <a href="#aprendizado">
+                Aprendizado
+              </a>
+            </li>
+
+            <li>
+              <a href="#contribuir">
+                Contribuir
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="theme-button" id="theme-button" type="button" aria-label="Ativar tema escuro" title="Alterar tema">
+          <span id="theme-icon" aria-hidden="true">
+            🌙
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-container">
+          <div class="hero-content">
+            <p class="hero-eyebrow">
+              Git sem complicação
+            </p>
+
+            <h1 id="hero-title">
+              Aprenda Git com exemplos práticos
+            </h1>
+
+            <p class="hero-description">
+              Consulte comandos, entenda fluxos de trabalho e
+              desenvolva boas práticas de versionamento de código.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#comandos">
+                Explorar comandos
+              </a>
+
+              <a class="secondary-button" href="#aprendizado">
+                Ver trilha de aprendizado
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-terminal" aria-label="Exemplo de terminal Git">
+            <div class="terminal-header" aria-hidden="true">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+            </div>
+
+            <div class="terminal-content">
+              <p>
+                <span aria-hidden="true">$</span>
+                git status
+              </p>
+
+              <p class="terminal-success">
+                On branch main
+              </p>
+
+              <p>
+                nothing to commit, working tree clean
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="statistics-section" aria-label="Estatísticas da documentação">
+        <div class="statistics-container">
+          <article class="statistic-card">
+            <strong id="total-commands">
+              0
+            </strong>
+
+            <span>
+              comandos disponíveis
+            </span>
+          </article>
+
+          <article class="statistic-card">
+            <strong id="total-categories">
+              0
+            </strong>
+
+            <span>
+              categorias
+            </span>
+          </article>
+
+          <article class="statistic-card">
+            <strong>
+              3
+            </strong>
+
+            <span>
+              níveis de aprendizado
+            </span>
+          </article>
+        </div>
+      </section>
+
+      <section class="commands-section" id="comandos" aria-labelledby="commands-title">
+        <div class="section-container">
+          <header class="section-header">
+            <p class="section-eyebrow">
+              Consulta rápida
+            </p>
+
+            <h2 id="commands-title">
+              Encontre o comando que você precisa
+            </h2>
+
+            <p>
+              Pesquise pelo nome do comando, finalidade,
+              categoria ou palavra-chave.
+            </p>
+          </header>
+
+          <div class="search-container">
+            <label class="search-label" for="command-search">
+              Pesquisar comandos Git
+            </label>
+
+            <div class="search-field">
+              <span class="search-icon" aria-hidden="true">
+                🔎
+              </span>
+
+              <input type="search" id="command-search"  name="command-search" placeholder="Exemplo: commit, branch, desfazer..." autocomplete="off" spellcheck="false"/>
+
+              <button class="clear-search-button" id="clear-search-button" type="button" aria-label="Limpar pesquisa" hidden>
+                ×
+              </button>
+            </div>
+          </div>
+
+          <div class="filters-container" aria-labelledby="category-filter-title">
+            <h3 id="category-filter-title">
+              Filtrar por categoria
+            </h3>
+
+            <div class="filter-buttons" id="category-filters">
+              <button class="filter-button active" type="button" data-category="todos" aria-pressed="true">
+                Todos
+              </button>
+
+              <button class="filter-button" type="button" data-category="configuracao" aria-pressed="false">
+                Configuração
+              </button>
+
+              <button class="filter-button" type="button" data-category="alteracoes" aria-pressed="false">
+                Alterações
+              </button>
+
+              <button class="filter-button" type="button" data-category="branches" aria-pressed="false">
+                Branches
+              </button>
+
+              <button class="filter-button" type="button" data-category="remotos" aria-pressed="false">
+                Remotos
+              </button>
+
+              <button class="filter-button" type="button" data-category="historico" aria-pressed="false">
+                Histórico
+              </button>
+
+              <button class="filter-button" type="button" data-category="desfazer" aria-pressed="false">
+                Desfazer
+              </button>
+            </div>
+          </div>
+
+          <div class="filters-container" aria-labelledby="level-filter-title">
+            <h3 id="level-filter-title">
+              Filtrar por nível
+            </h3>
+
+            <div class="filter-buttons" id="level-filters">
+              <button class="filter-button active" type="button" data-level="todos" aria-pressed="true">
+                Todos
+              </button>
+
+              <button class="filter-button" type="button" data-level="basico" aria-pressed="false">
+                Básico
+              </button>
+
+              <button class="filter-button" type="button" data-level="intermediario" aria-pressed="false">
+                Intermediário
+              </button>
+
+              <button class="filter-button" type="button" data-level="avancado" aria-pressed="false">
+                Avançado
+              </button>
+            </div>
+          </div>
+
+          <div class="results-header">
+            <p
+              id="results-message"
+              role="status" aria-live="polite">
+              Carregando comandos...
+            </p>
+          </div>
+
+          <div class="commands-grid" id="commands-grid">
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <span class="empty-state-icon" aria-hidden="true">
+              🔍
+            </span>
+
+            <h3>
+              Nenhum comando encontrado
+            </h3>
+
+            <p>
+              Tente alterar a pesquisa ou selecionar outros filtros.
+            </p>
+
+            <button class="secondary-button" id="reset-filters-button" type="button">
+              Limpar filtros
+            </button>
+          </div>
+
+          <noscript>
+            <div class="noscript-warning">
+              <strong>JavaScript desativado.</strong>
+
+              <p>
+                Ative o JavaScript do navegador para visualizar,
+                pesquisar e filtrar os comandos.
+              </p>
+            </div>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="learning-section" id="aprendizado" aria-labelledby="learning-title">
+        <div class="section-container">
+          <header class="section-header">
+            <p class="section-eyebrow">
+              Trilha de aprendizado
+            </p>
+
+            <h2 id="learning-title">
+              Evolua do básico ao avançado
+            </h2>
+
+            <p>
+              Siga uma sequência progressiva para aprender Git
+              com segurança e confiança.
+            </p>
+          </header>
+
+          <div class="learning-grid">
+            <article class="learning-card">
+              <span class="learning-number" aria-hidden="true">
+                01
+              </span>
+
+              <h3>
+                Fundamentos
+              </h3>
+
+              <p>
+                Entenda repositórios, área de preparação,
+                commits e histórico.
+              </p>
+
+              <ul>
+                <li>Git init</li>
+                <li>Git status</li>
+                <li>Git add</li>
+                <li>Git commit</li>
+              </ul>
+            </article>
+
+            <article class="learning-card">
+              <span class="learning-number" aria-hidden="true">
+                02
+              </span>
+
+              <h3>
+                Trabalho em equipe
+              </h3>
+
+              <p>
+                Aprenda a trabalhar com branches,
+                repositórios remotos e integração de código.
+              </p>
+
+              <ul>
+                <li>Git branch</li>
+                <li>Git switch</li>
+                <li>Git merge</li>
+                <li>Git pull</li>
+              </ul>
+            </article>
+
+            <article class="learning-card">
+              <span class="learning-number" aria-hidden="true">
+                03
+              </span>
+
+              <h3>
+                Recursos avançados
+              </h3>
+
+              <p>
+                Domine recuperação de alterações,
+                reorganização de histórico e investigação.
+              </p>
+
+              <ul>
+                <li>Git rebase</li>
+                <li>Git reflog</li>
+                <li>Git cherry-pick</li>
+                <li>Git bisect</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="warning-section" aria-labelledby="warning-title">
+        <div class="section-container">
+          <div class="warning-content">
+            <span class="warning-icon" aria-hidden="true">
+              ⚠️
+            </span>
+
+            <div>
+              <h2 id="warning-title">
+                Atenção aos comandos destrutivos
+              </h2>
+
+              <p>
+                Alguns comandos podem apagar alterações locais
+                ou modificar o histórico do repositório.
+                Sempre confira o estado do projeto antes de executá-los.
+              </p>
+
+              <code>git status</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contribution-section" id="contribuir" aria-labelledby="contribution-title">
+        <div class="section-container contribution-container">
+          <div>
+            <p class="section-eyebrow">
+              Projeto open source
+            </p>
+
+            <h2 id="contribution-title">
+              Ajude a melhorar esta documentação
+            </h2>
+
+            <p>
+              Encontrou um erro, deseja sugerir um comando
+              ou contribuir com um exemplo? Participe do projeto.
+            </p>
+          </div>
+
+          <a class="primary-button" href="https://github.com/Gleika-Almeida/lista-Comandos-Git" target="_blank" rel="noopener noreferrer">
+            Ver repositório no GitHub
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>
+          Desenvolvido por
+          <a href="https://github.com/Gleika-Almeida" target="_blank" rel="noopener noreferrer">
+            Gleika
+          </a>
+        </p>
+
+        <p>
+          Documentação educacional sobre Git e versionamento de código.
+        </p>
+
+        <a href="#inicio">
+          Voltar ao início
+        </a>
+      </div>
+    </footer>
+
+    <div class="toast" id="copy-toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+      Comando copiado!
+    </div>
+</body>
+</html>

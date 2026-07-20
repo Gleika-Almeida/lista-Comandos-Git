@@ -1427,6 +1427,433 @@ code {
 }
 
 /* ==========================================================
+   PÁGINAS INTERNAS
+   ========================================================== */
+
+.internal-page main {
+  min-height: 70vh;
+}
+
+.article-container {
+  width: min(calc(100% - 2rem), 980px);
+  margin-inline: auto;
+  padding: 2rem 0 6rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+
+  margin-bottom: 3rem;
+
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.article-header {
+  max-width: 850px;
+  margin-bottom: 2.5rem;
+}
+
+.article-header h1 {
+  margin: 0.65rem 0 1.25rem;
+
+  font-size: clamp(2.4rem, 7vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.article-header > p:last-child {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.article-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  margin: 2.5rem 0 4rem;
+  padding: 1.4rem;
+
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-primary-soft);
+}
+
+.article-note-icon {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+}
+
+.article-note h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.article-note p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.article-section {
+  padding: 2rem 0 4rem;
+}
+
+.article-section + .article-section {
+  border-top: 1px solid var(--color-border);
+}
+
+.article-section-header {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.article-section-header h2 {
+  margin: 0.45rem 0 0.75rem;
+
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.article-section-header p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.article-step-label {
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Fluxo profissional */
+
+.workflow-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.workflow-step:hover {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--color-primary) 55%,
+      var(--color-border)
+    );
+
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.workflow-step-number {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.workflow-step-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.workflow-step-content > p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.command-sequence {
+  display: grid;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+  padding: 1rem;
+
+  overflow-x: auto;
+
+  border: 1px solid #263247;
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-terminal);
+}
+
+.command-sequence code {
+  display: block;
+  min-width: max-content;
+  color: var(--color-terminal-text);
+}
+
+.command-sequence code::before {
+  margin-right: 0.6rem;
+  color: #ff765d;
+  content: "$";
+}
+
+.workflow-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+}
+
+.workflow-examples strong {
+  width: 100%;
+}
+
+.workflow-examples code {
+  padding: 0.35rem 0.55rem;
+
+  border-radius: 0.35rem;
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+.workflow-recommendation {
+  margin-top: 1rem !important;
+  padding: 0.8rem;
+
+  border-radius: var(--radius-small);
+  background-color: var(--color-success-soft);
+  color: var(--color-success) !important;
+}
+
+.workflow-checklist {
+  display: grid;
+  gap: 0.65rem;
+
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.workflow-checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.workflow-checklist li::before {
+  position: absolute;
+  left: 0;
+
+  color: var(--color-success);
+  content: "✓";
+
+  font-weight: 900;
+}
+
+/* Tipos de commit */
+
+.commit-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.commit-type-card {
+  padding: 1.25rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface);
+}
+
+.commit-type-card > code {
+  display: inline-flex;
+  padding: 0.3rem 0.55rem;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  font-weight: 850;
+}
+
+.commit-type-card h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.commit-type-card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.commit-type-card span {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.65rem;
+
+  border-radius: var(--radius-small);
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+
+  font-family:
+    "Ubuntu Mono",
+    "Cascadia Code",
+    "Fira Code",
+    Consolas,
+    monospace;
+
+  font-size: 0.82rem;
+}
+
+/* Checklist */
+
+.final-checklist {
+  display: grid;
+  gap: 0.75rem;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+}
+
+.final-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  padding: 0.75rem;
+
+  border-radius: var(--radius-small);
+  color: var(--color-text-secondary);
+
+  cursor: pointer;
+
+  transition: background-color var(--transition-fast);
+}
+
+.final-checklist label:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.final-checklist input {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+
+  accent-color: var(--color-primary);
+}
+
+.final-checklist code {
+  color: var(--color-primary);
+}
+
+.article-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-top: 2rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.article-navigation a {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.article-navigation a:hover {
+  text-decoration: underline;
+}
+
+.learning-link {
+  display: inline-flex;
+  margin-top: 1.25rem;
+
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.learning-link:hover {
+  text-decoration: underline;
+}
+
+.navigation-list a[aria-current="page"] {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+@media (max-width: 700px) {
+  .article-container {
+    width: min(calc(100% - 1.25rem), 980px);
+  }
+
+  .workflow-step {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step-number {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .commit-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-navigation {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================
    IMPRESSÃO
    ========================================================== */
 

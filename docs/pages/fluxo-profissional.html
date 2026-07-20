@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"content="Aprenda um fluxo profissional de trabalho com Git, desde a criação da branch até o Pull Request."/>
+    <meta name="author" content="Gleika Almeida"/>
+    <meta name="theme-color" content="#0f172a"/>
+    <title> Fluxo com Git — Git Guide</title>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <script src="../assets/js/page.js" defer ></script>
+</head>
+<body  class="internal-page">
+    <a class="skip-link" href="#conteudo-principal">
+      Pular para o conteúdo principal
+    </a>
+
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" href="../index.html" aria-label="Voltar para a página inicial">
+          <span class="brand-icon" aria-hidden="true">
+            &lt;/&gt;
+          </span>
+
+          <span class="brand-text">
+            Git Guide
+          </span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Navegação principal">
+          <ul class="navigation-list">
+            <li>
+              <a href="../index.html">Início</a>
+            </li>
+
+            <li>
+              <a href="../index.html#comandos">Comandos</a>
+            </li>
+
+            <li>
+              <a href="./fluxo-profissional.html" aria-current="page">Fluxo profissional</a>
+            </li>
+
+            <li>
+              <a href="../index.html#contribuir">Contribuir</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="theme-button" id="theme-button" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro">
+          <span id="theme-icon" aria-hidden="true">
+            🌙
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <div class="article-container">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="../index.html">Início</a>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <span aria-current="page">
+            Fluxo profissional
+          </span>
+        </nav>
+
+        <header class="article-header">
+          <p class="section-eyebrow">
+            Boas práticas
+          </p>
+
+          <h1>
+            Fluxo de aprendizado com Git
+          </h1>
+
+          <p>
+            Aprenda uma sequência segura para desenvolver
+            funcionalidades, registrar alterações e colaborar
+            com outras pessoas em um projeto.
+          </p>
+        </header>
+
+        <aside class="article-note" aria-labelledby="important-note-title">
+          <span class="article-note-icon" aria-hidden="true">
+            💡
+          </span>
+
+          <div>
+            <h2 id="important-note-title">
+              Antes de começar
+            </h2>
+
+            <p>
+              Não desenvolva novas funcionalidades diretamente
+              na branch principal. Crie uma branch específica para
+              cada tarefa, correção ou funcionalidade.
+            </p>
+          </div>
+        </aside>
+
+        <section class="article-section" aria-labelledby="workflow-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Processo completo
+            </span>
+
+            <h2 id="workflow-title">
+              Da atualização da main ao Pull Request
+            </h2>
+          </header>
+
+          <div class="workflow-list">
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                01
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Acesse a branch principal
+                </h3>
+
+                <p>
+                  Primeiro, confirme que você está na branch
+                  principal do projeto.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git switch main</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                02
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Atualize o repositório local
+                </h3>
+
+                <p>
+                  Receba as alterações mais recentes antes de
+                  começar uma nova tarefa.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git pull origin main</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                03
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Crie uma branch específica
+                </h3>
+
+                <p>
+                  O nome da branch deve indicar claramente o
+                  objetivo do trabalho.
+                </p>
+
+                <div class="command-sequence">
+                  <code>
+                    git switch -c feature/campo-de-pesquisa
+                  </code>
+                </div>
+
+                <div class="workflow-examples">
+                  <strong>Outros exemplos:</strong>
+
+                  <code>fix/corrige-filtro</code>
+                  <code>docs/atualiza-readme</code>
+                  <code>refactor/organiza-javascript</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                04
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Desenvolva e revise as alterações
+                </h3>
+
+                <p>
+                  Durante o desenvolvimento, consulte o estado do
+                  repositório e revise as mudanças realizadas.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                  <code>git diff</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                05
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Adicione os arquivos à preparação
+                </h3>
+
+                <p>
+                  Você pode adicionar todos os arquivos ou selecionar
+                  apenas aqueles que pertencem ao commit atual.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git add docs/index.html</code>
+                  <code>git add docs/assets/css/style.css</code>
+                </div>
+
+                <p class="workflow-recommendation">
+                  Em projetos profissionais, selecionar os arquivos
+                  individualmente ajuda a evitar commits com alterações
+                  não relacionadas.
+                </p>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <divclass="workflow-step-number" aria-hidden="true">
+                06
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Revise o conteúdo preparado
+                </h3>
+
+                <p>
+                  Antes do commit, verifique quais arquivos estão
+                  na área de preparação.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                  <code>git diff --staged</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                07
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Crie um commit semântico
+                </h3>
+
+                <p>
+                  A mensagem deve informar o tipo e o objetivo
+                  da alteração.
+                </p>
+
+                <div class="command-sequence">
+                  <code>
+                    git commit -m "feat: adiciona campo de pesquisa"
+                  </code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                08
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Envie a branch ao GitHub
+                </h3>
+
+                <p>
+                  No primeiro envio, associe a branch local à branch
+                  remota utilizando a opção <code>-u</code>.
+                </p>
+
+                <div class="command-sequence">
+                  <code>
+                    git push -u origin feature/campo-de-pesquisa
+                  </code>
+                </div>
+
+                <p>
+                  Nos próximos envios dessa mesma branch, será
+                  suficiente executar:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git push</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                09
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Abra um Pull Request
+                </h3>
+
+                <p>
+                  No GitHub, abra um Pull Request da branch de
+                  desenvolvimento para a branch
+                  <code>main</code>.
+                </p>
+
+                <ul class="workflow-checklist">
+                  <li>
+                    Escreva um título objetivo.
+                  </li>
+
+                  <li>
+                    Explique o que foi alterado.
+                  </li>
+
+                  <li>
+                    Informe como testar.
+                  </li>
+
+                  <li>
+                    Adicione imagens quando houver mudança visual.
+                  </li>
+
+                  <li>
+                    Revise a aba de arquivos modificados.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <div class="workflow-step-number" aria-hidden="true">
+                10
+              </div>
+
+              <div class="workflow-step-content">
+                <h3>
+                  Atualize e limpe o ambiente local
+                </h3>
+
+                <p>
+                  Depois que o Pull Request for aprovado e integrado,
+                  atualize a branch principal e remova a branch antiga.
+                </p>
+
+                <div class="command-sequence">
+                  <code>git switch main</code>
+                  <code>git pull origin main</code>
+                  <code>
+                    git branch -d feature/campo-de-pesquisa
+                  </code>
+                  <code>git fetch --prune</code>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="commits-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Conventional Commits
+            </span>
+
+            <h2 id="commits-title">
+              Tipos de commits mais utilizados
+            </h2>
+
+            <p>
+              O prefixo ajuda a identificar rapidamente a natureza
+              da alteração.
+            </p>
+          </header>
+
+          <div class="commit-types-grid">
+            <article class="commit-type-card">
+              <code>feat</code>
+
+              <h3>Nova funcionalidade</h3>
+
+              <p>
+                Utilizado quando uma capacidade nova é adicionada
+                ao projeto.
+              </p>
+
+              <span>
+                feat: adiciona busca por comandos
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>fix</code>
+
+              <h3>Correção de problema</h3>
+
+              <p>
+                Utilizado para corrigir um erro ou comportamento
+                inesperado.
+              </p>
+
+              <span>
+                fix: corrige filtro de categorias
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>docs</code>
+
+              <h3>Documentação</h3>
+
+              <p>
+                Utilizado para README, guias, exemplos e textos
+                documentais.
+              </p>
+
+              <span>
+                docs: atualiza instruções de instalação
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>style</code>
+
+              <h3>Formatação visual</h3>
+
+              <p>
+                Utilizado para estilos, formatação ou alterações que
+                não modificam a regra de negócio.
+              </p>
+
+              <span>
+                style: ajusta espaçamento dos cartões
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>refactor</code>
+
+              <h3>Refatoração</h3>
+
+              <p>
+                Reorganiza o código sem adicionar funcionalidade ou
+                corrigir erro diretamente.
+              </p>
+
+              <span>
+                refactor: separa lógica de tema
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>test</code>
+
+              <h3>Testes</h3>
+
+              <p>
+                Utilizado para criação, correção ou atualização de
+                testes automatizados.
+              </p>
+
+              <span>
+                test: adiciona testes dos filtros
+              </span>
+            </article>
+
+            <article class="commit-type-card">
+              <code>chore</code>
+
+              <h3>Manutenção</h3>
+
+              <p>
+                Representa configurações, dependências e tarefas
+                internas do projeto.
+              </p>
+
+              <span>
+                chore: adiciona licença MIT
+              </span>
+            </article>
+          </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="checklist-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Revisão final
+            </span>
+
+            <h2 id="checklist-title">
+              Checklist antes de executar git push
+            </h2>
+          </header>
+
+          <div class="final-checklist">
+            <label>
+              <input type="checkbox" />
+              Estou na branch correta.
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              Revisei as alterações com
+              <code>git diff</code>.
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              Adicionei apenas os arquivos relacionados à tarefa.
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              Testei a funcionalidade localmente.
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              A mensagem do commit descreve claramente a alteração.
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              Nenhum dado sensível foi incluído no commit.
+            </label>
+          </div>
+        </section>
+
+        <nav class="article-navigation" aria-label="Navegação entre conteúdos">
+          <a href="../index.html#aprendizado">
+            ← Voltar para a trilha
+          </a>
+
+          <a href="../index.html#comandos">
+            Consultar comandos →
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>
+          Desenvolvido por
+          <a href="https://github.com/Gleika-Almeida" target="_blank" rel="noopener noreferrer">
+            Gleika Almeida
+          </a>
+        </p>
+
+        <p>
+          Guia educacional sobre Git e versionamento de código.
+        </p>
+
+        <a href="#conteudo-principal">
+          Voltar ao início
+        </a>
+      </div>
+    </footer>
+    
+</body>
+</html>

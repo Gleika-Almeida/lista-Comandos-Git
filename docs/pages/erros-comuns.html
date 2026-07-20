@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Guia de erros comuns do Git com explicações, diagnóstico e soluções seguras."/>
+    <meta name="author" content="Gleika Almeida"/>
+    <meta name="theme-color" content="#0f172a"/>
+    <title>Erros comuns e soluções — Git Guide</title>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <script src="../assets/js/page.js" defer ></script>
+  </head>
+
+  <body class="internal-page">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+      <div class="header-container">
+
+        <a class="brand" href="../index.html" aria-label="Voltar para a página inicial">
+          <span class="brand-icon" aria-hidden="true"> &lt;/&gt; </span>
+          <span class="brand-text">Git Guide</span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Navegação principal">
+          <ul class="navigation-list">
+            <li>
+              <a href="../index.html">Início</a>
+            </li>
+
+            <li>
+              <a href="../index.html#comandos">Comandos</a>
+            </li>
+
+            <li>
+              <a href="./fluxo-profissional.html">Fluxo profissional</a>
+            </li>
+
+            <li>
+              <a href="./erros-comuns.html" aria-current="page">Erros comuns</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="theme-button" id="theme-button" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro">
+          <span id="theme-icon" aria-hidden="true">
+            🌙
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <div class="article-container">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="../index.html">
+            Início
+          </a>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <span aria-current="page">
+            Erros comuns
+          </span>
+        </nav>
+
+        <header class="article-header">
+          <p class="section-eyebrow">
+            Solução de problemas
+          </p>
+
+          <h1>
+            Erros comuns do Git e como resolvê-los
+          </h1>
+
+          <p>
+            Entenda por que determinados erros acontecem,
+            quais comandos ajudam no diagnóstico e como
+            corrigir cada situação sem colocar seu trabalho
+            em risco.
+          </p>
+        </header>
+
+        <aside class="article-note" aria-labelledby="safety-title">
+          <span class="article-note-icon" aria-hidden="true">
+            🛡️
+          </span>
+
+          <div>
+            <h2 id="safety-title">
+              Regra de segurança
+            </h2>
+
+            <p>
+              Antes de executar comandos como
+              <code>reset --hard</code>,
+              <code>clean</code> ou exclusão forçada de branches,
+              verifique o estado do repositório e confirme que
+              nenhuma alteração importante será perdida.
+            </p>
+          </div>
+        </aside>
+
+        <section class="article-section" aria-labelledby="diagnostic-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Diagnóstico inicial
+            </span>
+
+            <h2 id="diagnostic-title">
+              Três comandos para executar primeiro
+            </h2>
+
+            <p>
+              Antes de tentar corrigir o problema, descubra o estado
+              atual do repositório.
+            </p>
+          </header>
+
+          <div class="diagnostic-grid">
+            <article class="diagnostic-card">
+              <span class="diagnostic-number" aria-hidden="true">
+                01
+              </span>
+
+              <h3>
+                Verifique o estado
+              </h3>
+
+              <p>
+                Mostra arquivos alterados, conflitos,
+                branch atual e ações pendentes.
+              </p>
+
+              <div class="command-sequence">
+                <code>git status</code>
+              </div>
+            </article>
+
+            <article class="diagnostic-card">
+              <span class="diagnostic-number" aria-hidden="true">
+                02
+              </span>
+
+              <h3>
+                Confira a branch
+              </h3>
+
+              <p>
+                Confirma em qual branch você está trabalhando.
+              </p>
+
+              <div class="command-sequence">
+                <code>git branch --show-current</code>
+              </div>
+            </article>
+
+            <article class="diagnostic-card">
+              <span class="diagnostic-number" aria-hidden="true">
+                03
+              </span>
+
+              <h3>
+                Consulte o histórico
+              </h3>
+
+              <p>
+                Exibe os commits recentes e ajuda a localizar
+                alterações importantes.
+              </p>
+
+              <div class="command-sequence">
+                <code>git log --oneline --graph --all -10</code>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="problems-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Problemas frequentes
+            </span>
+
+            <h2 id="problems-title">
+              Mensagens de erro e soluções
+            </h2>
+
+            <p>
+              Clique em cada situação para visualizar a explicação
+              e os passos de correção.
+            </p>
+          </header>
+
+          <div class="troubleshooting-list">
+            <details class="troubleshooting-card" open>
+              <summary>
+                <span class="troubleshooting-icon">
+                  📁
+                </span>
+
+                <span>
+                  <strong>
+                    Fatal: not a git repository
+                  </strong>
+
+                  <small>
+                    O terminal não está dentro de um repositório Git.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  fatal: not a git repository
+                  (or any of the parent directories): .git
+                </p>
+
+                <h3>
+                  Por que acontece?
+                </h3>
+
+                <p>
+                  O comando foi executado em uma pasta que não contém
+                  o diretório oculto <code>.git</code>.
+                </p>
+
+                <h3>
+                  Como corrigir
+                </h3>
+
+                <ol class="solution-steps">
+                  <li>
+                    Confira a pasta atual:
+
+                    <div class="command-sequence">
+                      <code>pwd</code>
+                    </div>
+                  </li>
+
+                  <li>
+                    Liste os arquivos e pastas:
+
+                    <div class="command-sequence">
+                      <code>ls -la</code>
+                    </div>
+                  </li>
+
+                  <li>
+                    Entre na pasta correta:
+
+                    <div class="command-sequence">
+                      <code>cd caminho/do/projeto</code>
+                    </div>
+                  </li>
+
+                  <li>
+                    Caso seja um projeto novo, inicialize o Git:
+
+                    <div class="command-sequence">
+                      <code>git init</code>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  📝
+                </span>
+
+                <span>
+                  <strong>
+                    Nothing added to commit
+                  </strong>
+
+                  <small>
+                    Existem arquivos modificados ou não rastreados,
+                    mas eles ainda não foram preparados.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  no changes added to commit
+                  (use "git add" and/or "git commit -a")
+                </p>
+
+                <h3>
+                  Por que acontece?
+                </h3>
+
+                <p>
+                  O comando <code>git commit</code> foi executado
+                  sem que os arquivos fossem adicionados à área
+                  de preparação.
+                </p>
+
+                <h3>
+                  Como corrigir
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                  <code>git add nome-do-arquivo</code>
+                  <code>git commit -m "tipo: descreve a alteração"</code>
+                </div>
+
+                <p class="safe-note">
+                  Adicionar arquivos individualmente reduz o risco de
+                  incluir alterações não relacionadas no commit.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  🌿
+                </span>
+
+                <span>
+                  <strong>
+                    Src refspec main does not match any
+                  </strong>
+
+                  <small>
+                    A branch informada pode não existir ou ainda não
+                    possui commits.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  error: src refspec main does not match any
+                </p>
+
+                <h3>
+                  Possíveis causas
+                </h3>
+
+                <ul class="problem-causes">
+                  <li>
+                    O repositório ainda não possui nenhum commit.
+                  </li>
+
+                  <li>
+                    A branch atual possui outro nome.
+                  </li>
+
+                  <li>
+                    O nome da branch foi digitado incorretamente.
+                  </li>
+                </ul>
+
+                <h3>
+                  Verifique a branch atual
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git branch --show-current</code>
+                </div>
+
+                <h3>
+                  Caso ainda não exista um commit
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git add .</code>
+                  <code>git commit -m "chore: cria estrutura inicial"</code>
+                  <code>git push -u origin main</code>
+                </div>
+
+                <p class="safe-note">
+                  Substitua <code>main</code> pelo nome realmente
+                  apresentado em <code>git branch --show-current</code>.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  🔗
+                </span>
+
+                <span>
+                  <strong>
+                    Remote origin already exists
+                  </strong>
+
+                  <small>
+                    Já existe um repositório remoto chamado origin.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  error: remote origin already exists
+                </p>
+
+                <h3>
+                  Confira o remoto configurado
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git remote -v</code>
+                </div>
+
+                <h3>
+                  Caso a URL esteja errada
+                </h3>
+
+                <div class="command-sequence">
+                  <code>
+                    git remote set-url origin
+                    https://github.com/usuario/repositorio.git
+                  </code>
+                </div>
+
+                <h3>
+                  Confira novamente
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git remote -v</code>
+                </div>
+
+                <p class="safe-note">
+                  Não é necessário criar outro <code>origin</code>.
+                  Atualize a URL do remoto existente.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  ⬆️
+                </span>
+
+                <span>
+                  <strong>
+                    Push rejected — non-fast-forward
+                  </strong>
+
+                  <small>
+                    O repositório remoto possui commits que ainda
+                    não estão na sua branch local.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  rejected: non-fast-forward
+                </p>
+
+                <h3>
+                  Por que acontece?
+                </h3>
+
+                <p>
+                  Outra alteração foi enviada ao repositório remoto
+                  antes do seu <code>push</code>. O Git impede que
+                  você sobrescreva esse histórico acidentalmente.
+                </p>
+
+                <h3>
+                  Solução recomendada</h3>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                  <code>git pull --rebase origin main</code>
+                  <code>git push</code>
+                </div>
+
+                <p>
+                  Caso surja um conflito durante o rebase, resolva
+                  os arquivos e execute:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git add nome-do-arquivo</code>
+                  <code>git rebase --continue</code>
+                </div>
+
+                <p>
+                  Para cancelar o rebase:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git rebase --abort</code>
+                </div>
+
+                <p class="danger-note">
+                  Evite utilizar <code>git push --force</code> sem
+                  compreender o impacto, especialmente em branches
+                  compartilhadas.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  ⚔️
+                </span>
+
+                <span>
+                  <strong>
+                    Conflito de merge
+                  </strong>
+
+                  <small>
+                    Duas versões modificaram a mesma região de um
+                    arquivo.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  CONFLICT (content): Merge conflict in arquivo
+                </p>
+
+                <h3>
+                  Identifique os arquivos em conflito
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                </div>
+
+                <h3>
+                  Localize os marcadores no arquivo
+                </h3>
+
+                <pre class="conflict-example"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+conteúdo da sua branch
+=======
+conteúdo da outra branch
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; nome-da-branch</code></pre>
+
+                <ol class="solution-steps">
+                  <li>
+                    Escolha ou combine o conteúdo correto.
+                  </li>
+
+                  <li>
+                    Remova os marcadores
+                    <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+                    <code>=======</code> e
+                    <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+                  </li>
+
+                  <li>
+                    Salve o arquivo.
+                  </li>
+
+                  <li>
+                    Marque o conflito como resolvido:
+
+                    <div class="command-sequence">
+                      <code>git add nome-do-arquivo</code>
+                    </div>
+                  </li>
+                </ol>
+
+                <p>
+                  Se o conflito ocorreu durante um merge:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git commit</code>
+                </div>
+
+                <p>
+                  Se ocorreu durante um rebase:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git rebase --continue</code>
+                </div>
+
+                <p>
+                  Para cancelar um merge ainda não concluído:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git merge --abort</code>
+                </div>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  🔄
+                </span>
+
+                <span>
+                  <strong>
+                    Please commit or stash your changes
+                  </strong>
+
+                  <small>
+                    Existem alterações locais que impedem a troca
+                    de branch ou atualização.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  Please commit your changes or stash them before
+                  you switch branches
+                </p>
+
+                <h3>
+                  Opção 1 — Criar um commit
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git add .</code>
+                  <code>
+                    git commit -m "wip: salva trabalho em andamento"
+                  </code>
+                </div>
+
+                <h3>
+                  Opção 2 — Guardar temporariamente
+                </h3>
+
+                <div class="command-sequence">
+                  <code>
+                    git stash push -m "trabalho em andamento"
+                  </code>
+                  <code>git switch nome-da-branch</code>
+                </div>
+
+                <p>
+                  Para recuperar depois:
+                </p>
+
+                <div class="command-sequence">
+                  <code>git stash list</code>
+                  <code>git stash pop</code>
+                </div>
+
+                <p class="safe-note">
+                  Use o stash para alterações temporárias. Um trabalho
+                  importante e coerente deve ser registrado em commit.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  🧭
+                </span>
+
+                <span>
+                  <strong>
+                    Detached HEAD
+                  </strong>
+
+                  <small>
+                    O Git está apontando diretamente para um commit,
+                    e não para uma branch.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <p class="error-message">
+                  You are in 'detached HEAD' state
+                </p>
+
+                <h3>
+                  Caso você não tenha criado alterações
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git switch main</code>
+                </div>
+
+                <h3>
+                  Caso tenha criado commits que deseja preservar
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git switch -c recovery/trabalho-recuperado</code>
+                </div>
+
+                <p class="safe-note">
+                  Criar uma branch nesse ponto preserva os commits
+                  realizados enquanto o HEAD estava desconectado.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  ↩️
+                </span>
+
+                <span>
+                  <strong>
+                    Arquivo adicionado por engano
+                  </strong>
+
+                  <small>
+                    O arquivo entrou na área de preparação, mas ainda
+                    não deveria fazer parte do commit.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <h3>
+                  Retire o arquivo da área de preparação
+                </h3>
+
+                <div class="command-sequence">
+                  <code>
+                    git restore --staged nome-do-arquivo
+                  </code>
+                </div>
+
+                <p>
+                  As alterações continuarão no arquivo. Apenas a
+                  preparação será desfeita.
+                </p>
+
+                <p class="safe-note">
+                  Esse comando é diferente de
+                  <code>git restore nome-do-arquivo</code>, que
+                  descarta alterações locais.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  ✏️
+                </span>
+
+                <span>
+                  <strong>
+                    Mensagem incorreta no último commit
+                  </strong>
+
+                  <small>
+                    O commit foi criado, mas sua mensagem precisa
+                    ser corrigida.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <h3>
+                  Caso o commit ainda não tenha sido enviado
+                </h3>
+
+                <div class="command-sequence">
+                  <code>
+                    git commit --amend -m
+                    "docs: corrige mensagem do commit"
+                  </code>
+                </div>
+
+                <p class="danger-note">
+                  Evite alterar commits que já foram enviados para
+                  uma branch compartilhada. O amend muda a
+                  identificação do commit.
+                </p>
+              </div>
+            </details>
+
+            <details class="troubleshooting-card">
+              <summary>
+                <span class="troubleshooting-icon">
+                  🔐
+                </span>
+
+                <span>
+                  <strong>
+                    Arquivo sensível enviado ao repositório
+                  </strong>
+
+                  <small>
+                    Um arquivo como <code>.env</code> ou uma chave
+                    foi incluído por engano.
+                  </small>
+                </span>
+              </summary>
+
+              <div class="troubleshooting-content">
+                <h3>
+                  Remova o arquivo do rastreamento
+                </h3>
+
+                <div class="command-sequence">
+                  <code>git rm --cached .env</code>
+                </div>
+
+                <h3>
+                  Adicione ao arquivo .gitignore
+                </h3>
+
+                <div class="command-sequence">
+                  <code>echo ".env" &gt;&gt; .gitignore</code>
+                  <code>git add .gitignore</code>
+                  <code>
+                    git commit -m
+                    "security: remove arquivo de ambiente"
+                  </code>
+                </div>
+
+                <p class="danger-note">
+                  Caso uma senha, token ou chave já tenha sido
+                  enviada ao GitHub, considere a credencial
+                  comprometida e substitua-a imediatamente.
+                  Remover o arquivo em um novo commit não apaga
+                  automaticamente o conteúdo do histórico anterior.
+                </p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="recovery-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Recuperação
+            </span>
+
+            <h2 id="recovery-title">
+              Localizar commits aparentemente perdidos
+            </h2>
+
+            <p>
+              O reflog registra movimentações recentes do HEAD e pode
+              ajudar na recuperação de commits.
+            </p>
+          </header>
+
+          <div class="recovery-panel">
+            <div>
+              <h3>
+                Consulte o reflog
+              </h3>
+
+              <div class="command-sequence">
+                <code>git reflog</code>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                Crie uma branch a partir do commit encontrado
+              </h3>
+
+              <div class="command-sequence">
+                <code>
+                  git switch -c recovery/commit-recuperado
+                  hash-do-commit
+                </code>
+              </div>
+            </div>
+
+            <p class="safe-note">
+              Criar uma branch de recuperação é mais seguro do que
+              mover imediatamente a branch principal.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="article-section" aria-labelledby="avoid-title">
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Prevenção
+            </span>
+
+            <h2 id="avoid-title">
+              Hábitos que evitam a maioria dos problemas
+            </h2>
+          </header>
+
+          <div class="prevention-grid">
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Use git status
+              </h3>
+
+              <p>
+                Consulte o estado antes de adicionar arquivos,
+                trocar de branch ou criar commits.
+              </p>
+            </article>
+
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Faça commits pequenos
+              </h3>
+
+              <p>
+                Um commit deve representar uma alteração coerente
+                e fácil de revisar.
+              </p>
+            </article>
+
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Atualize antes de desenvolver
+              </h3>
+
+              <p>
+                Receba as alterações da branch principal antes de
+                iniciar uma nova funcionalidade.
+              </p>
+            </article>
+
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Revise o diff
+              </h3>
+
+              <p>
+                Confira exatamente o que será incluído no commit
+                antes de registrá-lo.
+              </p>
+            </article>
+
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Configure o .gitignore
+              </h3>
+
+              <p>
+                Exclua arquivos de ambiente, dependências,
+                credenciais e arquivos gerados.
+              </p>
+            </article>
+
+            <article>
+              <span aria-hidden="true">
+                ✅
+              </span>
+
+              <h3>
+                Evite comandos por impulso
+              </h3>
+
+              <p>
+                Entenda o efeito de comandos destrutivos antes
+                de executá-los.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <nav class="article-navigation" aria-label="Navegação entre conteúdos">
+          <a href="./fluxo-profissional.html">
+            ← Fluxo profissional
+          </a>
+
+          <a href="../index.html#comandos">
+            Consultar comandos →
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>
+          Desenvolvido por
+          <a href="https://github.com/Gleika-Almeida" target="_blank" rel="noopener noreferrer">
+            Gleika Almeida
+          </a>
+        </p>
+
+        <p>
+          Guia educacional sobre Git e versionamento de código.
+        </p>
+
+        <a href="#conteudo-principal">
+          Voltar ao início
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

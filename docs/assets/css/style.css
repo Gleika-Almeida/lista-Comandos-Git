@@ -1896,4 +1896,332 @@ code {
     box-shadow: none;
   }
 }
-  
+/* ==========================================================
+   ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+   ==========================================================*/
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.diagnostic-card {
+  padding: 1.25rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+}
+
+.diagnostic-number {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.diagnostic-card h3 {
+  margin: 1rem 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.diagnostic-card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.troubleshooting-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.troubleshooting-card {
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.troubleshooting-card[open] {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--color-primary) 50%,
+      var(--color-border)
+    );
+
+  box-shadow: var(--shadow-medium);
+}
+
+.troubleshooting-card summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1.2rem 1.35rem;
+
+  cursor: pointer;
+  list-style: none;
+
+  transition: background-color var(--transition-fast);
+}
+
+.troubleshooting-card summary:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.troubleshooting-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.troubleshooting-card summary::after {
+  margin-left: auto;
+
+  color: var(--color-primary);
+  content: "+";
+
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  transition: transform var(--transition-fast);
+}
+
+.troubleshooting-card[open] summary::after {
+  content: "−";
+}
+
+.troubleshooting-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+
+  border-radius: var(--radius-small);
+  background-color: var(--color-surface-secondary);
+
+  font-size: 1.2rem;
+}
+
+.troubleshooting-card summary > span:nth-child(2) {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.troubleshooting-card summary strong {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.troubleshooting-card summary small {
+  color: var(--color-text-secondary);
+  font-size: 0.86rem;
+}
+
+.troubleshooting-content {
+  padding: 1.35rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.troubleshooting-content h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.troubleshooting-content h3:first-of-type {
+  margin-top: 1rem;
+}
+
+.troubleshooting-content > p {
+  color: var(--color-text-secondary);
+}
+
+.error-message {
+  overflow-x: auto;
+
+  margin: 0 !important;
+  padding: 0.85rem 1rem;
+
+  border-left: 4px solid var(--color-danger);
+  border-radius: var(--radius-small);
+
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger) !important;
+
+  font-family:
+    "Ubuntu Mono",
+    "Cascadia Code",
+    "Fira Code",
+    Consolas,
+    monospace;
+
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.solution-steps {
+  display: grid;
+  gap: 1.2rem;
+
+  padding-left: 1.4rem;
+  color: var(--color-text-secondary);
+}
+
+.solution-steps li::marker {
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.problem-causes {
+  display: grid;
+  gap: 0.6rem;
+
+  padding-left: 1.3rem;
+  color: var(--color-text-secondary);
+}
+
+.safe-note,
+.danger-note {
+  margin-top: 1.2rem !important;
+  padding: 0.9rem 1rem;
+
+  border-radius: var(--radius-small);
+
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.safe-note {
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-success) 35%,
+      transparent
+    );
+
+  background-color: var(--color-success-soft);
+  color: var(--color-success) !important;
+}
+
+.danger-note {
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-danger) 35%,
+      transparent
+    );
+
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger) !important;
+}
+
+.conflict-example {
+  overflow-x: auto;
+
+  padding: 1rem;
+
+  border: 1px solid #263247;
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-terminal);
+  color: var(--color-terminal-text);
+}
+
+.conflict-example code {
+  font-size: 0.86rem;
+}
+
+.recovery-panel {
+  display: grid;
+  gap: 1.25rem;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+}
+
+.recovery-panel h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.prevention-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.prevention-grid article {
+  padding: 1.25rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface);
+}
+
+.prevention-grid article > span {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.prevention-grid h3 {
+  margin: 0.7rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+.prevention-grid p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+  .diagnostic-grid,
+  .prevention-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .troubleshooting-card summary {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .troubleshooting-content {
+    padding: 1rem;
+  }
+
+  .troubleshooting-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .error-message {
+    white-space: normal;
+  }
+}
+

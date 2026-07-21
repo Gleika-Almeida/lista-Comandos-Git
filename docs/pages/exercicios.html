@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Exercícios práticos de Git organizados por níveis, com desafios, respostas e acompanhamento de progresso."/>
+    <meta name="author" content="Gleika Almeida"/>
+    <meta name="theme-color" content="#0f172a"/>
+    <title>Exercícios práticos de Git</title>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <script src="../assets/js/page.js" defer></script>
+    <script src="../assets/js/exercises.js" defer ></script>
+  </head>
+
+  <body class="internal-page">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" href="../index.html" aria-label="Voltar para a página inicial">
+          <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand-text">Git</span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Navegação principal">
+          <ul class="navigation-list">
+            <li>
+              <a href="../index.html">Início</a>
+            </li>
+
+            <li>
+              <a href="../index.html#comandos">Comandos</a>
+            </li>
+
+            <li>
+              <a href="./fluxo-profissional.html">Fluxo profissional</a>
+            </li>
+
+            <li>
+              <a href="./erros-comuns.html">Erros comuns</a>
+            </li>
+
+            <li>
+              <a href="./exercicios.html" aria-current="page">Exercícios</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="theme-button" id="theme-button" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro">
+          <span id="theme-icon" aria-hidden="true">
+            🌙
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <div class="article-container">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="../index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Exercícios</span>
+        </nav>
+
+        <header class="article-header">
+          <p class="section-eyebrow">
+            Prática orientada
+          </p>
+
+          <h1>Exercícios práticos de Git</h1>
+
+          <p>
+            Resolva situações progressivas, confira as respostas
+            e acompanhe sua evolução do nível básico ao avançado.
+          </p>
+        </header>
+
+        <aside class="article-note" aria-labelledby="exercise-tip-title">
+          <span class="article-note-icon" aria-hidden="true">
+            🧪
+          </span>
+
+          <div>
+            <h2 id="exercise-tip-title">Use um repositório de treinamento</h2>
+
+            <p>
+              Para praticar sem riscos, crie uma pasta separada.
+              Não execute comandos destrutivos em um projeto
+              importante apenas para testar um exercício.
+            </p>
+          </div>
+        </aside>
+
+        <section class="exercise-progress-panel" id="progresso" aria-labelledby="progress-title">
+          <div class="exercise-progress-header">
+            <div>
+              <p class="article-step-label">
+                Seu progresso
+              </p>
+
+              <h2 id="progress-title">
+                <span id="completed-exercises">
+                  0
+                </span>
+                 de
+                <span id="total-exercises">
+                 9
+                </span>
+                exercícios
+              </h2>
+
+              <p id="exercise-progress-status" role="status" aria-live="polite">
+                Nenhum exercício concluído ainda.
+              </p>
+            </div>
+
+            <button class="secondary-button" id="reset-progress-button" type="button">
+              Reiniciar progresso
+            </button>
+          </div>
+
+          <div class="exercise-progress-track" role="progressbar" aria-label="Progresso dos exercícios" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="exercise-progress-bar"></div>
+          </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="basic-exercises-title">
+          <header class="article-section-header">
+            <span class="article-step-label">Nível básico</span>
+            <h2 id="basic-exercises-title">Fundamentos do fluxo Git</h2>
+            <p>
+              Pratique inicialização, primeiro commit,
+              branches e repositórios remotos.
+            </p>
+          </header>
+
+          <div class="exercises-list">
+            <article class="exercise-card" data-exercise="basic-01">
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">Exercício 01</span>
+                  <h3>Inicializar um projeto e criar o primeiro commit</h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input class="exercise-complete" type="checkbox" data-exercise-id="basic-01"/>
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+                <p>
+                  Você criou uma pasta chamada
+                  <code>meu-primeiro-projeto</code> com um arquivo
+                  <code>README.md</code>. A pasta ainda não utiliza Git.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>Sua tarefa</h4>
+
+                <ol>
+                  <li>
+                    Inicialize o repositório.
+                  </li>
+
+                  <li>
+                    Confira o estado dos arquivos.
+                  </li>
+
+                  <li>
+                    Adicione o README à área de preparação.
+                  </li>
+
+                  <li>
+                    Crie o primeiro commit.
+                  </li>
+                </ol>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>Revelar resposta</summary>
+
+                <div class="command-sequence">
+                  <code>git init</code>
+                  <code>git status</code>
+                  <code>git add README.md</code>
+                  <code>git commit -m "docs: cria documentacao inicial"</code>
+                </div>
+
+                <p>
+                  O <code>git init</code> cria o repositório local.
+                  O arquivo precisa passar pela área de preparação
+                  antes de ser registrado em um commit.
+                </p>
+              </details>
+            </article>
+
+            <article class="exercise-card" data-exercise="basic-02">
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">Exercício 02</span>
+                  <h3>Criar uma branch de funcionalidade</h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input class="exercise-complete" type="checkbox" data-exercise-id="basic-02"/>
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  Você está na branch <code>main</code> e precisa
+                  desenvolver um campo de pesquisa sem alterar
+                  diretamente a branch principal.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>Sua tarefa</h4>
+
+                <p>
+                  Crie e acesse uma branch chamada
+                  <code>feature/campo-de-pesquisa</code>.
+                  Depois, confirme qual branch está ativa.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>Revelar resposta</summary>
+
+                <div class="command-sequence">
+                  <code>git switch -c feature/campo-de-pesquisa</code>
+                  <code>git branch --show-current</code>
+                </div>
+
+                <p>
+                  A opção <code>-c</code> cria a nova branch e
+                  muda imediatamente para ela.
+                </p>
+              </details>
+            </article>
+
+            <article class="exercise-card" data-exercise="basic-03">
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">Exercício 03</span>
+                  <h3>Clonar e inspecionar um repositório</h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input class="exercise-complete" type="checkbox" data-exercise-id="basic-03"/>
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+                <p>
+                  Um projeto já existe no GitHub e você precisa
+                  baixá-lo para seu computador e verificar a URL
+                  remota configurada.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>Sua tarefa</h4>
+
+                <p>
+                  Clone o repositório, entre na pasta criada e
+                  liste os remotos.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>Revelar resposta</summary>
+
+                <div class="command-sequence">
+                  <code>
+                    git clone
+                    https://github.com/usuario/projeto.git
+                  </code>
+
+                  <code>cd projeto</code>
+                  <code>git remote -v</code>
+                </div>
+
+                <p>
+                  Normalmente, o Git configura o repositório
+                  original com o nome <code>origin</code>.
+                </p>
+              </details>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="article-section"
+          aria-labelledby="intermediate-exercises-title"
+        >
+          <header class="article-section-header">
+            <span class="article-step-label">Nível intermediário
+            </span>
+
+            <h2 id="intermediate-exercises-title">Organização e integração de alterações</h2>
+
+            <p>
+              Trabalhe com preparação seletiva, stash,
+              merge e limpeza de branches.
+            </p>
+          </header>
+
+          <div class="exercises-list">
+            <article class="exercise-card"
+              data-exercise="intermediate-01">
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">Exercício 04</span>
+
+                  <h3>Preparar apenas arquivos relacionados</h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input class="exercise-complete" type="checkbox" data-exercise-id="intermediate-01"/>
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  Os arquivos <code>index.html</code>,
+                  <code>style.css</code> e
+                  <code>anotacoes.txt</code> foram modificados.
+                  Somente os dois primeiros pertencem à funcionalidade.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>Sua tarefa</h4>
+
+                <p>
+                  Prepare apenas os arquivos da funcionalidade,
+                  revise o conteúdo preparado e crie o commit.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>Revelar resposta</summary>
+
+                <div class="command-sequence">
+                  <code>git add index.html</code>
+                  <code>git add style.css</code>
+                  <code>git diff --staged</code>
+                  <code>
+                    git commit -m
+                    "feat: adiciona estrutura visual da pagina"
+                  </code>
+                </div>
+
+                <p>
+                  O arquivo <code>anotacoes.txt</code> continuará
+                  modificado, mas não fará parte desse commit.
+                </p>
+              </details>
+            </article>
+
+            <article class="exercise-card" data-exercise="intermediate-02">
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">Exercício 05</span>
+
+                  <h3>Guardar trabalho antes de trocar de branch</h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input class="exercise-complete" type="checkbox"
+                    data-exercise-id="intermediate-02"/>
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  Você está desenvolvendo uma funcionalidade ainda
+                  incompleta, mas precisa mudar temporariamente para
+                  a branch <code>main</code>.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>
+                  Sua tarefa
+                </h4>
+
+                <p>
+                  Guarde as alterações com uma descrição, troque
+                  de branch e depois recupere o trabalho.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>
+                  Revelar resposta
+                </summary>
+
+                <div class="command-sequence">
+                  <code>
+                    git stash push -m
+                    "campo de pesquisa em desenvolvimento"
+                  </code>
+
+                  <code>git switch main</code>
+                  <code>git switch feature/campo-de-pesquisa</code>
+                  <code>git stash list</code>
+                  <code>git stash pop</code>
+                </div>
+
+                <p>
+                  O <code>stash pop</code> reaplica as alterações
+                  e remove a entrada da lista quando a operação
+                  termina corretamente.
+                </p>
+              </details>
+            </article>
+
+            <article
+              class="exercise-card"
+              data-exercise="intermediate-03"
+            >
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">
+                    Exercício 06
+                  </span>
+
+                  <h3>
+                    Integrar e remover uma branch concluída
+                  </h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input
+                    class="exercise-complete"
+                    type="checkbox"
+                    data-exercise-id="intermediate-03"
+                  />
+
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  A branch <code>feature/menu-mobile</code> foi
+                  concluída e deve ser integrada à
+                  <code>main</code>.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>
+                  Sua tarefa
+                </h4>
+
+                <p>
+                  Atualize a branch principal, integre a
+                  funcionalidade e remova a branch local concluída.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>
+                  Revelar resposta
+                </summary>
+
+                <div class="command-sequence">
+                  <code>git switch main</code>
+                  <code>git pull origin main</code>
+                  <code>git merge feature/menu-mobile</code>
+                  <code>git branch -d feature/menu-mobile</code>
+                </div>
+
+                <p>
+                  A opção <code>-d</code> remove a branch apenas
+                  quando seu trabalho já foi integrado com segurança.
+                </p>
+              </details>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="article-section"
+          aria-labelledby="advanced-exercises-title"
+        >
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Nível avançado
+            </span>
+
+            <h2 id="advanced-exercises-title">
+              Conflitos, reversão e recuperação
+            </h2>
+
+            <p>
+              Resolva situações que exigem maior atenção ao
+              histórico do repositório.
+            </p>
+          </header>
+
+          <div class="exercises-list">
+            <article
+              class="exercise-card"
+              data-exercise="advanced-01"
+            >
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">
+                    Exercício 07
+                  </span>
+
+                  <h3>
+                    Resolver um conflito de merge
+                  </h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input
+                    class="exercise-complete"
+                    type="checkbox"
+                    data-exercise-id="advanced-01"
+                  />
+
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  Durante um merge, o arquivo
+                  <code>README.md</code> apresentou conflito.
+                  Você já editou o arquivo e removeu os marcadores.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>
+                  Sua tarefa
+                </h4>
+
+                <p>
+                  Confirme os conflitos, marque o arquivo como
+                  resolvido e finalize o merge.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>
+                  Revelar resposta
+                </summary>
+
+                <div class="command-sequence">
+                  <code>git status</code>
+                  <code>git add README.md</code>
+                  <code>git commit</code>
+                </div>
+
+                <p>
+                  Antes de executar <code>git add</code>, confirme
+                  que os marcadores do conflito foram removidos
+                  e que o conteúdo final está correto.
+                </p>
+
+                <p class="danger-note">
+                  Para cancelar um merge ainda não concluído,
+                  utilize <code>git merge --abort</code>.
+                </p>
+              </details>
+            </article>
+
+            <article
+              class="exercise-card"
+              data-exercise="advanced-02"
+            >
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">
+                    Exercício 08
+                  </span>
+
+                  <h3>
+                    Desfazer um commit já compartilhado
+                  </h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input
+                    class="exercise-complete"
+                    type="checkbox"
+                    data-exercise-id="advanced-02"
+                  />
+
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  O commit <code>a1b2c3d</code> introduziu um erro
+                  e já foi enviado para uma branch utilizada por
+                  outras pessoas.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>
+                  Sua tarefa
+                </h4>
+
+                <p>
+                  Desfaça o commit sem reescrever o histórico
+                  compartilhado.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>
+                  Revelar resposta
+                </summary>
+
+                <div class="command-sequence">
+                  <code>git revert a1b2c3d</code>
+                  <code>git push</code>
+                </div>
+
+                <p>
+                  O <code>git revert</code> cria um novo commit que
+                  desfaz as alterações do commit informado.
+                </p>
+
+                <p class="safe-note">
+                  Essa abordagem é mais segura que
+                  <code>git reset</code> em branches compartilhadas.
+                </p>
+              </details>
+            </article>
+
+            <article
+              class="exercise-card"
+              data-exercise="advanced-03"
+            >
+              <header class="exercise-card-header">
+                <div>
+                  <span class="exercise-number">
+                    Exercício 09
+                  </span>
+
+                  <h3>
+                    Recuperar um commit aparentemente perdido
+                  </h3>
+                </div>
+
+                <label class="exercise-complete-label">
+                  <input
+                    class="exercise-complete"
+                    type="checkbox"
+                    data-exercise-id="advanced-03"
+                  />
+
+                  Concluído
+                </label>
+              </header>
+
+              <div class="exercise-scenario">
+                <strong>Cenário:</strong>
+
+                <p>
+                  Após uma alteração de branch ou reset, um commit
+                  importante não aparece mais no histórico normal.
+                </p>
+              </div>
+
+              <div class="exercise-task">
+                <h4>
+                  Sua tarefa
+                </h4>
+
+                <p>
+                  Localize o commit e crie uma branch de recuperação
+                  a partir dele.
+                </p>
+              </div>
+
+              <details class="exercise-answer">
+                <summary>
+                  Revelar resposta
+                </summary>
+
+                <div class="command-sequence">
+                  <code>git reflog</code>
+                  <code>
+                    git switch -c recovery/commit-recuperado
+                    hash-do-commit
+                  </code>
+                </div>
+
+                <p>
+                  O reflog apresenta movimentações recentes do
+                  <code>HEAD</code>. Depois de identificar o hash,
+                  criar uma branch preserva o commit recuperado.
+                </p>
+              </details>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="article-section"
+          aria-labelledby="practice-project-title"
+        >
+          <header class="article-section-header">
+            <span class="article-step-label">
+              Desafio final
+            </span>
+
+            <h2 id="practice-project-title">
+              Crie um repositório completo de treinamento
+            </h2>
+
+            <p>
+              Reúna os conhecimentos desta página em um pequeno
+              projeto prático.
+            </p>
+          </header>
+
+          <div class="practice-project">
+            <h3>
+              Projeto sugerido: página de perfil pessoal
+            </h3>
+
+            <ol>
+              <li>
+                Crie uma pasta e inicialize o Git.
+              </li>
+
+              <li>
+                Adicione <code>index.html</code>,
+                <code>style.css</code> e <code>README.md</code>.
+              </li>
+
+              <li>
+                Faça um commit inicial.
+              </li>
+
+              <li>
+                Crie uma branch para o cabeçalho.
+              </li>
+
+              <li>
+                Desenvolva e registre a alteração.
+              </li>
+
+              <li>
+                Integre a branch à <code>main</code>.
+              </li>
+
+              <li>
+                Crie um repositório no GitHub.
+              </li>
+
+              <li>
+                Configure o remoto e envie a branch principal.
+              </li>
+
+              <li>
+                Confira o histórico com
+                <code>git log --oneline --graph --all</code>.
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <nav
+          class="article-navigation"
+          aria-label="Navegação entre conteúdos"
+        >
+          <a href="./erros-comuns.html">
+            ← Erros comuns
+          </a>
+
+          <a href="../index.html#comandos">
+            Consultar comandos →
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>
+          Desenvolvido por
+          <a
+            href="https://github.com/Gleika-Almeida"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gleika
+          </a>
+        </p>
+
+        <p>
+          Guia educacional sobre Git e versionamento de código.
+        </p>
+
+        <a href="#conteudo-principal">
+          Voltar ao início
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

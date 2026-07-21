@@ -2198,6 +2198,269 @@ code {
   font-size: 0.9rem;
 }
 
+/* ==========================================================
+   EXERCÍCIOS INTERATIVOS
+   ========================================================== */
+
+.exercise-progress-panel {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-medium);
+}
+
+.exercise-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.exercise-progress-header h2 {
+  margin: 0.4rem 0 0.35rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.exercise-progress-header p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.exercise-progress-track {
+  height: 0.8rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-secondary);
+}
+
+#exercise-progress-bar {
+  width: 0;
+  height: 100%;
+
+  border-radius: inherit;
+  background-color: var(--color-primary);
+
+  transition: width var(--transition-normal);
+}
+
+.exercises-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.exercise-card {
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.exercise-card:hover {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--color-primary) 50%,
+      var(--color-border)
+    );
+
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.exercise-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  padding: 1.4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.exercise-number {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.exercise-card-header h3 {
+  margin: 0.45rem 0 0;
+  font-size: 1.25rem;
+}
+
+.exercise-complete-label {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.75rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+
+  font-size: 0.83rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.exercise-complete-label:has(input:checked) {
+  border-color: var(--color-success);
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.exercise-complete-label input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-success);
+}
+
+.exercise-scenario,
+.exercise-task {
+  margin: 1.4rem;
+  padding: 1rem;
+
+  border-radius: var(--radius-medium);
+}
+
+.exercise-scenario {
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.exercise-scenario p {
+  margin: 0.4rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.exercise-task {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-secondary);
+}
+
+.exercise-task h4 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+}
+
+.exercise-task p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.exercise-task ol {
+  display: grid;
+  gap: 0.45rem;
+
+  margin: 0;
+  padding-left: 1.3rem;
+
+  color: var(--color-text-secondary);
+}
+
+.exercise-answer {
+  margin: 0 1.4rem 1.4rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-background);
+}
+
+.exercise-answer summary {
+  padding: 0.9rem 1rem;
+
+  color: var(--color-primary);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.exercise-answer[open] summary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.exercise-answer > .command-sequence {
+  margin: 1rem;
+}
+
+.exercise-answer > p {
+  margin: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.practice-project {
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      color-mix(
+        in srgb,
+        var(--color-primary) 14%,
+        transparent
+      ),
+      transparent 40%
+    ),
+    var(--color-surface);
+
+  box-shadow: var(--shadow-medium);
+}
+
+.practice-project h3 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+}
+
+.practice-project ol {
+  display: grid;
+  gap: 0.65rem;
+
+  margin: 0;
+  padding-left: 1.4rem;
+
+  color: var(--color-text-secondary);
+}
+
+.practice-project li::marker {
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .exercise-progress-header,
+  .exercise-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .exercise-progress-header .secondary-button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 850px) {
   .diagnostic-grid,
   .prevention-grid {

@@ -1,6 +1,6 @@
 "use strict";
 /*
-   Git Guide — Documentação Interativa
+   Git — Documentação Interativa
  
    Este arquivo controla:
   - renderização dos cartões;

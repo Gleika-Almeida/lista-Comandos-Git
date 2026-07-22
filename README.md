@@ -1,568 +1,376 @@
 <div align="center">
 <img  height="150" width="150" alt="GIt" src="https://github.com/Gleika-Almeida/Gleika-Almeida/assets/109559491/481990e1-bb5a-4084-a6a0-1e83e2233c10"/>
 </div>
-
-<br>
-<br>
-<br>
-
-<h1 align="center"> GIT LISTA DE COMANDOS</h1>
-
-<br>
-
-#### Índice
-- [Introdução a Git](#introdução-a-git)
-    - [O que é Git ?](#o-que-é-git-)
-    - [O que é controle de versão?](#o-que-é-controle-de-versão)
-- [Configuração Inicial](#configuração-inicial)
-    - [Instalando Debian/Ubuntu](#instalando-debianubuntu)
-    - [Este PPA fornece a versão mais recente estável do Git no Ubuntu.](#este-ppa-fornece-a-versão-mais-recente-estável-do-git-no-ubuntu)
-    - [Fedora](#fedora)
-  - [Instalando no Mac](#instalando-no-mac)
-    - [MacPorts](#macports)
-    - [Homebrew](#homebrew)
-- [Configuração do Usuário](#configuração-do-usuário)
-    - [Nome e e-mail](#nome-e-e-mail)
-    - [Editor](#editor)
-    - [Verificar a Versão do Git](#verificar-a-versão-do-git)
-    - [Testando suas Configurações](#testando-suas-configurações)
-- [Inicializando um Repositório](#inicializando-um-repositório)
-    - [Inicializando um Novo Repositório](#inicializando-um-novo-repositório)
-    - [Clonando Um Repositório Existente](#clonando-um-repositório-existente)
-- [Trabalhando Com Alterações](#trabalhando-com-alterações)
-    - [Verificando o Status](#verificando-o-status)
-    - [Alterações](#alterações)
-    - [Criando um Commit](#criando-um-commit)
-    - [Enviando as alterções](#enviando-as-alterções)
-    - [Recebendo as mudanças](#recebendo-as-mudanças)
-    - [Verificando status do arquivo](#verificando-status-do-arquivo)
-    - [Visualizando suas aterações](#visualizando-suas-aterações)
-    - [Vendo o histórico de Commits](#vendo-o-histórico-de-commits)
-    - [Ver algumas estatísticas abreviadas para cada commit](#ver-algumas-estatísticas-abreviadas-para-cada-commit)
-    - [Removendo Arquivos](#removendo-arquivos)
-    - [Renomeando arquivos](#renomeando-arquivos)
-    - [Desfazendo coisas](#desfazendo-coisas)
-    - [Desfazendo alterações](#desfazendo-alterações)
-    - [Desfazendo mudanças já rastreadas](#desfazendo-mudanças-já-rastreadas)
-- [Gerenciando seus repositórios remotos](#gerenciando-seus-repositórios-remotos)
-    - [Visualizando seus repositórios remotos](#visualizando-seus-repositórios-remotos)
-    - [Adicionar um repositório remoto](#adicionar-um-repositório-remoto)
-    - [Remover um repositório remoto](#remover-um-repositório-remoto)
-    - [Renomear um repositório remoto](#renomear-um-repositório-remoto)
-    - [Exibir informações sobre um repositório remoto](#exibir-informações-sobre-um-repositório-remoto)
-    - [Alterar a URL de um repositório remoto](#alterar-a-url-de-um-repositório-remoto)
-- [Branches](#branches)
-    - [Criar um novo branch](#criar-um-novo-branch)
-    - [Mudar para o novo ramo](#mudar-para-o-novo-ramo)
-    - [Listar todos os branches no repositório](#listar-todos-os-branches-no-repositório)
-    - [Trocando de branch](#trocando-de-branch)
-    - [Listar todos os branches e destacar o branch atual](#listar-todos-os-branches-e-destacar-o-branch-atual)
-    - [Listar branches remotos](#listar-branches-remotos)
-    - [Deletando](#deletando)
-    - [Branches que  ainda não mesclou](#branches-que--ainda-não-mesclou)
-    - [Sincronizar seu trabalho](#sincronizar-seu-trabalho)
-    - [Empurrando](#empurrando)
-    - [Enviar para um servidor remoto](#enviar-para-um-servidor-remoto)
-    - [mescla seu branch atual](#mescla-seu-branch-atual)
-    - [Unindo branches](#unindo-branches)
-    - [Salvar as Modificaçoes Atuais](#salvar-as-modificaçoes-atuais)
-    - [Recuperando Stash](#recuperando-stash)
-    - [Removendo a stash](#removendo-a-stash)
-    - [Deletar uma stash específica](#deletar-uma-stash-específica)
-- [Tags](#tags)
-    - [Criando Tag](#criando-tag)
-    - [Lista as Tags](#lista-as-tags)
-    - [Deletando](#deletando-1)
-    - [Criando uma tag Leve](#criando-uma-tag-leve)
-    - [Criando uma tag Anotada](#criando-uma-tag-anotada)
-    - [Exibir as informações](#exibir-as-informações)
-    - [Compartilhando Tags](#compartilhando-tags)
-    - [Enviar muitas tags de uma vez](#enviar-muitas-tags-de-uma-vez)
-
-<br>
-<div align="center">
-
-# Introdução a Git
-
-</div>
-
-
-
-### O que é Git ?
-
-O **Git** é um eficiente sistema de **controle de versão** que se destaca por sua estrutura interna, funcionando como uma máquina do tempo extremamente rápida, além de desempenhar um papel exemplar como um robô de integração competente. Criado em **2005** por ***Linus Torvalds***, o visionário por trás do ***Linux***, o **Git** surgiu como resposta ao descontentamento com o ***BitKeeper***, o então sistema de controle de versão utilizado no desenvolvimento do *kernel do Linux*. Sua versatilidade e eficácia contribuem para a colaboração eficiente e a gestão transparente do desenvolvimento de software em diversas comunidades de **Código aberto.**
-
-### O que é controle de versão?
-
-È um sistema que registra alterações é mantêm um histórico das modificações feitas em um conjunto de arquivos, rastreando quem fez as alterações, quando foram feitas e quais foram as mudanças específicas.
-
-<br>
-<br>
-
-# Configuração Inicial
-
-### Instalando Debian/Ubuntu
-
-```
-$ sudo apt-get install git
-```
-
-### Este PPA fornece a versão mais recente estável do Git no Ubuntu.
-```
-$ add-apt-repository ppa:git-core/ppa  
-$ apt update; apt install git
-
-```
-
-### Fedora
-
-```
-$ yum install git-core
-```
-
-## Instalando no Mac
-
-### MacPorts
-
-```
-$ sudo port install git
-```
-
-### Homebrew
-
-```
-$ brew install git
-```
-
-# Configuração do Usuário 
-
-### Nome e e-mail
-
-No terminal execute os comandos:
-
-```
-$ git config --global user.name "seu.user"
-$ git config --global user.email seu.email@gmail.com
-```
-
-### Editor
-
-Visual Studio Code como editor:
-
-```
-$ git config --global core.editor "code --wait"
-```
-
-Sublime como seu editor:
-
-```
-$ git config --global core.editor "subl -n -w"
-```
-
-### Verificar a Versão do Git
-
-```
-$ git --version
-```
-
-### Testando suas Configurações
-
-```
-$ git config --list
-```
-
-# Inicializando um Repositório 
-
-### Inicializando um Novo Repositório 
-
-```
-$ git init
-```
-
-### Clonando Um Repositório Existente 
-
-```
-$ git clone URL_DO_REPOSITORIO
-```
-
-# Trabalhando Com Alterações
-
-### Verificando o Status
-Veja as alterações pendentes.
-
-``` 
-$ git status
-
-```
-### Alterações 
-
-Adicione alterações específicas.
-
-``` 
-$ git add <nome_arquivo>
-
-``` 
-***ou***
-
-Todas ao stage para prepará-las para **commit**.
-
-```
-$ git add .
-```
-### Criando um Commit
-
-Para salvar as alterações no repositório.
-
-```
-$ git commit -m "sua mensagem aqui"
-```
-
- ⚠️ É uma boa prática utilizar `-m` indica que você está passando uma mensagem junto com o commit. Essa mensagem deve  descrevendo o que foi realizado.
-
-### Enviando as alterções
-
-```
-$ git push 
-```
-
-### Recebendo as mudanças
-
-sincronizar o repositório local com as mudanças do remoto.
-
-```
-$ git pull
-```
-
-### Verificando status do arquivo
-
-Lista os arquivos modificados e o conteúdo da área de stage.
-
-```
-$ git status
-```
-
-### Visualizando suas aterações    
-
-Mostra detalhadamente quais foram.
-
-```
-$ git diff
-```
-
-👇comparar as alterações que estão no seu stage com o seu último commit.
-
-```
-$ git diff --staged
-```
-
-### Vendo o histórico de Commits
-
-```
-$ git log
-```
-
-### Ver algumas estatísticas abreviadas para cada commit
-
-```
-$ git log --stat
-```
-
-**👇 Algumas opções simples de formatações de retorno para `git log  `.**
-
-
-| Opções          | Descrição                                                     | 
-| :--------        | :------------------------------------------------------------ | 
-| -p              | Mostra o patch introduzido com cada commit.                                         |    
-| --shortstat     | Exibe apenas a linha informando a alteração, inserção e exclusão do comando --stat. |  
-| --name-only     | Mostra a lista de arquivos modificados após as informações de commit.               | 
-| --name-status   | Mostra também a lista de arquivos que sofreram modificação com informações adicionadas / modificadas  /excluídas.        | 
-| --abbrev-commit | Mostra apenas os primeiros caracteres da soma de verificação SHA-1 em vez de todos os 40. | 
-| --relative-date | Exibe a data em um formato relativo (por exemplo, ‘` 2 semanas atrás '’) em vez de usar o formato de data  completo. | 
-| --graph         | Exibe um gráfico ASCII do histórico de branches e merges ao lado da saída do log.    |
-| --pretty        |Mostra os commits em um formato alternativo. As opções incluem oneline, short, full, fuller e format (onde você especifica seu próprio formato). | 
-
-⚠️ Aperte a tecla **q** para sair dos resultados do ` git log` .
-
-### Removendo Arquivos
-
-```
-$ git rm  README.md
-```
-👇 você pode querer manter o arquivo no seu diretório de trabalho, mas
-removê-lo da sua área de stage.
-
-```
-$ git rm --cached README
-```
-
-### Renomeando arquivos
-O mesmo também pode ser movido para outra pasta.
-
-```
-$ git mv
-```
-### Desfazendo coisas
-
-```
-$ git commit --amend
-```
-
-### Desfazendo alterações
-
-⚠️ É importante entender que o `git checkout -- <arquivo>` é um comando
-***perigoso***. Qualquer modificação que você fez no arquivo se foi.
-
-```
-$ git checkout
-```
-
-### Desfazendo mudanças já rastreadas
-
-O repositório fica exatamente no estado que estava no último commit.
-
-```
-$ git reset --hard
-```
-
-# Gerenciando seus repositórios remotos
-
-### Visualizando seus repositórios remotos
-
-`-v` mostra também as URLs associadas a cada repositório.
-
-```
-$ git remote
-$ git remote -v  
-```
-
-### Adicionar um repositório remoto
-
-Este comando adiciona um novo repositório remoto ao seu projeto. Você dá um nome por exemplo origin ao repositório  e especifica a URL onde ele está localizado.
-
-```
-$ git remote add <nome_repositório> <url_do_repositorio>
-```
-⚠️ Lembrando que ` <  >` e só para informar o que colocar. Não faz parte do comando!
-
-### Remover um repositório remoto
-
-Remove a associação entre o seu repositório local e um repositório remoto.
-
-```
-$ git remote remove <nome_repositório>
-ou
-$ git remote rm <nome_repositório>
-```
-
-### Renomear um repositório remoto
-
-```
-$ git remote rename <nome_atual>   <novo_nome>
-```
-
-### Exibir informações sobre um repositório remoto
-
-Fornece informações detalhadas sobre um repositório remoto, incluindo as branches remotas e suas relações com as branches locais.
-
-```
-$ git remote show <nome_remoto>
-```
-
-### Alterar a URL de um repositório remoto
-
-Permite que você atualize a URL de um repositório remoto.
-
-```
-$ git remote set-url <nome_remoto> <nova_url>
-```
-
-# Branches
-
-É a forma que o **git** separa as versões dos projetos.
-
-ramifique cedo, ramifique sempre !
-
-### Criar um novo branch
-
- ```
-$ git branch <nome_branch>
- ```
-
-### Mudar para o novo ramo
-
-Este comando cria um novo branch (ramo) e muda para ele.
-
- ```
-$ git switch -c <nome_branch>
- ```
-
-### Listar todos os branches no repositório
-
- ```
-$ git branch
- ```
-
-### Trocando de branch
-
- ```
-$ git checkout  <nome_branch>
- ```
-
-### Listar todos os branches e destacar o branch atual
-
- ```
-$ git branch -v
- ```
-
-### Listar branches remotos
-
- ```
-$ git branch -r
- ```
-
-
-### Deletando 
-
-Não é possível remover uma branch enquanto estivermos nela. Vá para outa branch. Delete com a opção `-d` uma branch que possui commits ainda não aplicados.
-
- ```
-$ git branch -d <nome_do_branch>
- ```
-
-⚠️ Para remover a branch se tiver feito algum commit, deve utilizar a opção `-D`.
-
- ```
-$ git branch -D <nome_branch>
- ```
-
-### Branches que  ainda não mesclou
-
- ```
-$ git branch --no-merged
- ```
-
- ### Sincronizar seu trabalho
-
-```
-$ git fetch origin
-```
- ### Empurrando
-
-```
-$ git push <remoto> <branch>
-```
-
-### Enviar para um servidor remoto
-```
-$ git push origin branch_local:remoto
-```
-
-### mescla seu branch atual
-
-``` 
-$ git merge origin/<nome_branch>
-
-```
-### Unindo branches
-
-```
-$ git merge <nome_branch>
-```
-
-### Salvar as Modificaçoes Atuais
-
-```
-$ git stash
-```
-
-### Recuperando Stash
-
-```
-$ git stash list
-$ git stash <nome>
-```
-
-### Removendo a stash
-
-Para limpar totalmente.
-
-```
-$ git stash clear
-```
-
-### Deletar uma stash específica
-
-```
-$ git stash drop <nome>
-```
-
-# Tags
-
-As tags são usadas para marcar pontos específicos na história do seu repositório,  para identificar versões estáveis ou lançamentos importantes. Em geral, criamos tags com nomes como **v1.0, v1.1, v2.0** e assim
-por diante.
-
-### Criando Tag
-
-```
-$ git tag  v1.0
-
-```
-
-### Lista as Tags
-
-```
-$ git tag
-```
-
-### Deletando 
-
-```
- $ git tag -d verssao1tag
-```
-
-###  Criando uma tag Leve 
-
-Funcionando apenas como um ponteiro para um ponto específico no projeto.
-
- ```
-$ git tag v1.0  2a1b6c3
-```
-
-### Criando uma tag Anotada
-
-Contem marcações de nome, email, data e uma mensagem de tag.
-
-```
-$ git tag -a v2.0 -m "Liberando versão urgente"
-```
-
-### Exibir as informações
-
-```
-$ git show -s v1.1
-```
-
-### Compartilhando Tags
-
-Por padrão, o comando **git push** não envia as tags para os servidores remoto. Você terá que
-explicitamente enviar as tags para o servidor de compartilhamento **depois** de tê-las criado.
-
-```
-$ git push origin v1.5
- ```
-
- ###  Enviar muitas tags de uma vez
- 
- ```
- $ git push origin --tags
-```
-
-
-
 <br>
 <br>
 <div align="center">
-<img  height="100" width="100" alt="GIt" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ0MTlzbGZ4dzg3eDBsdTYxZmdrajlwN2hzdGVrajJsN3pwY3lzZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7mMsa2P76o5Xn8NAD/giphy.gif"/>
 </div>
 
-<h5 align="center">Made with 💜 and Markdown.</h5>
+# Git Guia — Documentação Interativa
+
+Documentação interativa de comandos Git em português, desenvolvida para facilitar o aprendizado, a prática e a consulta durante projetos de software.
+
+O projeto reúne comandos, exemplos práticos, filtros, pesquisa, exercícios interativos, solução de problemas e um fluxo de trabalho semelhante ao utilizado em ambientes profissionais.
+
+### 🔗 [Git Guia](https://gleika-almeida.github.io/lista-Comandos-Git/)
+
+
+## Objetivo
+
+ É ajudar estudantes e pessoas desenvolvedoras a:
+
+- consultar comandos rapidamente;
+- compreender a finalidade de cada comando;
+- conhecer fluxos profissionais de versionamento;
+- identificar operações potencialmente destrutivas;
+- solucionar erros frequentes;
+- praticar Git por meio de exercícios;
+- desenvolver maior segurança ao trabalhar com repositórios.
+
+## Funcionalidades
+
+- Catálogo de comandos Git;
+- pesquisa por título, comando, descrição ou palavra-chave;
+- filtros por categoria;
+- filtros por nível de conhecimento;
+- cartões de consulta rápida;
+- botão para copiar comandos;
+- exemplos práticos;
+- alertas para comandos destrutivos;
+- modo claro e escuro;
+- preferência de tema salva no navegador;
+- fluxo profissional de trabalho com Git;
+- guia de erros comuns;
+- exercícios interativos;
+- acompanhamento do progresso dos exercícios;
+- progresso salvo no navegador;
+- página 404 personalizada;
+- layout responsivo;
+- navegação por teclado;
+- suporte à redução de movimento;
+- estilos específicos para impressão.
+
+## Páginas disponíveis
+
+| Página | Conteúdo |
+|---|---|
+| Página inicial | Pesquisa, filtros e catálogo de comandos |
+| Fluxo profissional | Branches, commits, push, merge e Pull Request |
+| Erros comuns | Diagnóstico e solução de problemas frequentes |
+| Exercícios | Desafios básicos, intermediários e avançados |
+| Página 404 | Página personalizada para endereços inexistentes |
+| Referência original | Conteúdo textual que deu origem ao projeto |
+
+## Tecnologias utilizadas
+
+- HTML5 semântico;
+- CSS3;
+- JavaScript ES6+;
+- Web Storage API;
+- Git;
+
+O projeto foi desenvolvido com tecnologias nativas da web, sem frameworks ou bibliotecas externas.
+
+## Executando localmente
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/Gleika-Almeida/lista-Comandos-Git.git
+```
+
+### 2. Entre na pasta do projeto
+
+```bash
+cd lista-Comandos-Git
+```
+
+### 3. Inicie um servidor local
+
+Utilizando Python 3:
+
+```bash
+python3 -m http.server 5500 --directory docs
+```
+
+### 4. Acesse no navegador
+
+```text
+http://localhost:5500
+```
+
+Para encerrar o servidor, pressione:
+
+```text
+Ctrl + C
+```
+
+## Catálogo de comandos
+
+Os comandos exibidos na página inicial estão armazenados em:
+
+```text
+docs/assets/js/commands.js
+```
+
+Cada comando é representado por um objeto JavaScript:
+
+```javascript
+{
+  id: "git-status",
+  title: "Verificar o estado do repositório",
+  command: "git status",
+  description:
+    "Mostra arquivos modificados, preparados, não rastreados e o estado da branch.",
+  category: "alteracoes",
+  level: "basico",
+  example: "git status",
+  keywords: [
+    "status",
+    "arquivos",
+    "alterações",
+    "branch",
+  ],
+  dangerous: false,
+}
+```
+
+### Comandos que exigem atenção
+
+Quando uma operação puder apagar alterações ou modificar o histórico, o objeto recebe um alerta:
+
+```javascript
+{
+  dangerous: true,
+  warning:
+    "Alterações locais ainda não registradas poderão ser perdidas.",
+}
+```
+
+Esses comandos são apresentados com uma identificação visual de segurança.
+
+## Categorias disponíveis
+
+```text
+configuracao
+alteracoes
+branches
+remotos
+historico
+desfazer
+```
+
+As categorias organizam os comandos de acordo com sua finalidade.
+
+## Níveis de aprendizado
+
+```text
+basico
+intermediario
+avancado
+```
+
+Os níveis ajudam a apresentar os comandos de forma progressiva.
+
+## Pesquisa e filtros
+
+A página inicial permite pesquisar utilizando:
+
+- nome do comando;
+- finalidade;
+- descrição;
+- exemplo;
+- categoria;
+- nível;
+- palavras-chave relacionadas.
+
+Também é possível combinar o campo de pesquisa com os filtros de categoria e nível.
+
+## Exercícios interativos
+
+A página de exercícios possui desafios organizados em três níveis:
+
+### Básico
+
+- inicialização de repositórios;
+- área de preparação;
+- primeiro commit;
+- criação de branches;
+- clonagem de projetos.
+
+### Intermediário
+
+- preparação seletiva de arquivos;
+- uso do stash;
+- integração de branches;
+- organização de commits.
+
+### Avançado
+
+- resolução de conflitos;
+- reversão de commits;
+- recuperação com reflog;
+- proteção do histórico compartilhado.
+
+O progresso é armazenado no navegador utilizando `localStorage`.
+
+## Fluxo profissional
+
+O guia apresenta uma sequência de trabalho próxima à utilizada em projetos reais:
+
+```bash
+git switch main
+git pull origin main
+git switch -c feature/nova-funcionalidade
+```
+
+Depois das alterações:
+
+```bash
+git status
+git diff
+git add caminho/do/arquivo
+git diff --staged
+git commit -m "feat: adiciona nova funcionalidade"
+git push -u origin feature/nova-funcionalidade
+```
+
+O fluxo também aborda:
+
+- nomenclatura de branches;
+- commits semânticos;
+- revisão de alterações;
+- Pull Requests;
+- integração com a branch principal;
+- remoção de branches concluídas.
+
+## Erros comuns
+
+O guia de solução de problemas apresenta situações como:
+
+- `fatal: not a git repository`;
+- `nothing added to commit`;
+- `src refspec main does not match any`;
+- `remote origin already exists`;
+- push rejeitado;
+- conflito de merge;
+- alterações impedindo a troca de branch;
+- estado de `detached HEAD`;
+- arquivos adicionados por engano;
+- mensagens incorretas em commits;
+- arquivos sensíveis enviados ao repositório;
+- recuperação de commits com `git reflog`.
+
+Cada situação contém:
+
+- mensagem de erro;
+- explicação da causa;
+- comandos de diagnóstico;
+- solução recomendada;
+- alertas de segurança.
+
+## Tema claro e escuro
+
+O projeto utiliza variáveis CSS para controlar os temas.
+
+A preferência escolhida é armazenada no navegador:
+
+```text
+git-guide-theme
+```
+
+Quando não existe uma preferência salva, a aplicação utiliza o tema configurado no sistema operacional.
+
+## Acessibilidade
+
+O projeto inclui:
+
+- HTML semântico;
+- hierarquia organizada de títulos;
+- link para pular ao conteúdo principal;
+- foco visível para navegação por teclado;
+- atributos ARIA em controles interativos;
+- mensagens dinâmicas com `aria-live`;
+- botões acessíveis por teclado;
+- contraste entre texto e fundo;
+- suporte a `prefers-reduced-motion`;
+- design responsivo;
+- conteúdo adaptável à ampliação da página.
+
+## Responsividade
+
+A interface foi desenvolvida para funcionar em:
+
+- celulares;
+- tablets;
+- notebooks;
+- monitores maiores.
+
+Os filtros possuem rolagem horizontal controlada em telas pequenas, enquanto os cartões e conteúdos são reorganizados em uma única coluna.
+
+## Página 404
+
+O projeto possui uma página personalizada para endereços inexistentes:
+
+```text
+docs/404.html
+```
+
+Sua estilização está separada em:
+
+```text
+docs/assets/css/404.css
+```
+
+A página oferece:
+
+- mensagem de erro personalizada;
+- terminal ilustrativo;
+- botão para voltar ao início;
+- acesso ao catálogo de comandos;
+- tema claro e escuro;
+- layout responsivo.
+
+## Segurança
+
+Alguns comandos Git podem apagar alterações locais ou modificar o histórico.
+
+Antes de executar operações como:
+
+```bash
+git reset --hard
+git clean -fd
+git branch -D
+git push --force
+```
+
+verifique o estado do repositório:
+
+```bash
+git status
+```
+
+Também é recomendável consultar o histórico:
+
+```bash
+git log --oneline --graph --all
+git reflog
+```
+
+Em branches compartilhadas, prefira operações que preservem o histórico, como:
+
+```bash
+git revert <hash-do-commit>
+```
+
+## Licença
+
+Este projeto está disponível sob a licença MIT.
+
+Consulte o arquivo [LICENSE](./LICENSE) para obter mais informações.
+
+## Autoria
+
+Desenvolvido por [Gleika](https://github.com/Gleika-Almeida).
+
+Projeto educacional criado para apoiar o aprendizado.

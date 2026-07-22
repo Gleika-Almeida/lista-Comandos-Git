@@ -1,0 +1,541 @@
+/* ==========================================================
+   PÁGINA 404 
+   ========================================================== */
+:root {
+  color-scheme: light;
+
+  --color-primary: #e84d2f;
+  --color-primary-hover: #c83d24;
+  --color-primary-soft: #fff0ec;
+
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+
+  --color-text: #172033;
+  --color-text-secondary: #586174;
+
+  --color-border: #dce2ea;
+  --color-focus: #2563eb;
+
+  --color-terminal: #111827;
+  --color-terminal-text: #e5e7eb;
+  --color-terminal-success: #4ade80;
+
+  --shadow-large:
+    0 24px 60px rgba(15, 23, 42, 0.14);
+
+  --radius-small: 0.5rem;
+  --radius-large: 1.25rem;
+
+  --transition-fast: 160ms ease;
+  --transition-normal: 280ms ease;
+}
+
+/* ==========================================================
+   TEMA ESCURO
+   ========================================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #ff765d;
+  --color-primary-hover: #ff947f;
+  --color-primary-soft: #3a1d18;
+
+  --color-background: #0b1120;
+  --color-surface: #121a2b;
+
+  --color-text: #edf2f7;
+  --color-text-secondary: #bac4d3;
+
+  --color-border: #28364c;
+  --color-focus: #60a5fa;
+
+  --shadow-large:
+    0 26px 70px rgba(0, 0, 0, 0.38);
+}
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      color-mix(
+        in srgb,
+        var(--color-primary) 20%,
+        transparent
+      ),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      color-mix(
+        in srgb,
+        var(--color-focus) 13%,
+        transparent
+      ),
+      transparent 30%
+    ),
+    var(--color-background);
+
+  color: var(--color-text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.6;
+
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(
+      color-mix(
+        in srgb,
+        var(--color-border) 40%,
+        transparent
+      )
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--color-border) 40%,
+        transparent
+      )
+      1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+  content: "";
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 95%
+    );
+}
+
+button,
+a {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================
+   ACESSIBILIDADE
+   ========================================================== */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+
+  padding: 0.75rem 1rem;
+
+  border-radius: var(--radius-small);
+  background-color: var(--color-text);
+  color: var(--color-background);
+
+  font-weight: 800;
+
+  transform: translateY(-160%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   ESTRUTURA
+   ========================================================== */
+.page-container {
+  width: min(calc(100% - 2rem), 1050px);
+  padding: 2rem 0;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================
+   MARCA
+   ========================================================== */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  font-weight: 850;
+  letter-spacing: -0.025em;
+}
+
+.brand-icon {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+
+  border-radius: 0.75rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+/* ==========================================================
+   BOTÃO DE TEMA
+   ========================================================== */
+.theme-button {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background-color: var(--color-surface);
+  color: var(--color-text);
+
+  font-size: 1.1rem;
+
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.theme-button:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  transform: rotate(8deg);
+}
+
+/* ==========================================================
+   CARTÃO DE ERRO
+   ========================================================== */
+.error-card {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(310px, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 5rem);
+
+  padding: clamp(1.5rem, 5vw, 4rem);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color:
+    color-mix(
+      in srgb,
+      var(--color-surface) 94%,
+      transparent
+    );
+
+  box-shadow: var(--shadow-large);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.error-eyebrow {
+  margin: 0;
+
+  color: var(--color-primary);
+
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.error-code {
+  display: block;
+  margin-top: 0.5rem;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--color-primary) 28%,
+      var(--color-text)
+    );
+
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+h1 {
+  max-width: 650px;
+  margin: 1.5rem 0 1rem;
+
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.error-description {
+  max-width: 640px;
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================
+   BOTÕES DE AÇÃO
+   ========================================================== */
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  margin-top: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.2rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+
+  font-weight: 750;
+
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.primary-button {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.secondary-button:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   TERMINAL
+   ========================================================== */
+.terminal {
+  overflow: hidden;
+
+  border: 1px solid #28354a;
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-terminal);
+  color: var(--color-terminal-text);
+
+  box-shadow: var(--shadow-large);
+}
+
+.terminal-header {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0 1rem;
+
+  border-bottom: 1px solid #28354a;
+  background-color: #171f2e;
+}
+
+.terminal-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+}
+
+.terminal-dot:nth-child(1) {
+  background-color: #ff5f57;
+}
+
+.terminal-dot:nth-child(2) {
+  background-color: #febc2e;
+}
+
+.terminal-dot:nth-child(3) {
+  background-color: #28c840;
+}
+
+.terminal-content {
+  min-height: 230px;
+  padding: 1.5rem;
+
+  font-family:
+    "Ubuntu Mono",
+    "Cascadia Code",
+    "Fira Code",
+    Consolas,
+    monospace;
+}
+
+.terminal-content p {
+  margin: 0 0 0.85rem;
+}
+
+.terminal-prompt {
+  margin-right: 0.5rem;
+  color: #ff765d;
+}
+
+.terminal-error {
+  color: #fca5a5;
+}
+
+.terminal-success {
+  color: var(--color-terminal-success);
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+.page-footer {
+  margin-top: 1.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.page-footer a {
+  color: var(--color-primary);
+  font-weight: 750;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+@media (max-width: 800px) {
+  .error-card {
+    grid-template-columns: 1fr;
+  }
+
+  .terminal {
+    width: min(100%, 650px);
+  }
+}
+
+@media (max-width: 520px) {
+  .page-container {
+    width: min(calc(100% - 1.25rem), 1050px);
+  }
+
+  .error-card {
+    padding: 1.25rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .terminal-content {
+    min-height: 190px;
+    padding: 1.1rem;
+    font-size: 0.87rem;
+  }
+}
+
+/* ==========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

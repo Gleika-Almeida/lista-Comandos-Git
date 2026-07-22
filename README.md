@@ -12,7 +12,7 @@ Documentação interativa de comandos Git em português, desenvolvida para facil
 
 O projeto reúne comandos, exemplos práticos, filtros, pesquisa, exercícios interativos, solução de problemas e um fluxo de trabalho semelhante ao utilizado em ambientes profissionais.
 
-### 🔗 [Git Guia](https://gleika-almeida.github.io/lista-Comandos-Git/)
+### 🔗 [Git Guia](https://gleika-almeida.github.io/guia-git/)
 
 
 ## Objetivo
